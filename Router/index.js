@@ -23,6 +23,13 @@ const Router = [
 	controller: buildPaymentPage,
 	type: 'GET',
 	middleware: authenticateToken
+	},
+	{
+		location: '/payment/check',
+		controller: (res,req)=>{
+			console.log(res.body)
+		},
+		type: 'POST',
 	}
 ]
 
