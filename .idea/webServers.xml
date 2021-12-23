@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="21ea5b93-9e27-4b1d-8364-a496630d6db1" name="mel-pay-server">
+        <fileTransfer accessType="SFTP" host="45.132.17.98" port="22" sshConfigId="7fd5b79a-5040-451d-8be2-f9f885087abb" sshConfig="root@45.132.17.98:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

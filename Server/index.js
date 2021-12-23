@@ -3,6 +3,7 @@ const express = require('express');
 const router = require('Router/index');
 const bodyParser = require('body-parser');
 const {requestType} = require('Constants/index');
+const { YMNotificationError} = require("yoomoney-sdk");
 const pic = fs.createReadStream( 'Pictures/404.jpg', 'base64',(err, base64Image) => {
 	// 2. Create a data URL
 	return `data:image/jpeg;base64, ${base64Image}`
