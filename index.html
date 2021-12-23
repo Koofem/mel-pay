@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<style data-styled="true" data-styled-version="5.3.1">
+    .hLCErC {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+        min-height: 100vh;
+        box-sizing: border-box;
+        font-family: 'Factor IO', Arial, sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        font-size: var(--size-typo-m);
+        line-height: var(--line-height-typo-m);
+        margin: 0;
+    }
+
+    /*!sc*/
+    .hLCErC div[style*="visibility: visible"][style*="position: absolute"][style*="left"][style*="right"][style*="top"],
+    .hLCErC div[style*="visibility:visible"][style*="position:absolute"][style*="left"][style*="right"][style*="top"] {
+        display: none;
+    }
+
+    /*!sc*/
+    data-styled.g140[id="styled__StyledBody-sc-1uyafiu-0"] {
+        content: "hLCErC,"
+    }
+
+    /*!sc*/
+</style>
+<html>
+
+<head>
+	<title>ЮMoney</title>
+	<meta charSet="utf-8" />
+	<meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1,user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="apple-touch-icon" sizes="180x180"
+				href="https://static.yoomoney.ru/files-front/head-resources/wallet/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32"
+				href="https://static.yoomoney.ru/files-front/head-resources/wallet/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16"
+				href="https://static.yoomoney.ru/files-front/head-resources/wallet/favicon-16x16.png" />
+	<link rel="manifest" href="https://static.yoomoney.ru/files-front/head-resources/wallet/site.webmanifest" />
+	<link rel="mask-icon" color="#8b3ffd"
+				href="https://static.yoomoney.ru/files-front/head-resources/wallet/safari-pinned-tab.svg" />
+	<meta name="msapplication-TileColor" content="#8b3ffd" />
+	<meta name="msapplication-config"
+				content="https://static.yoomoney.ru/files-front/head-resources/wallet/browserconfig.xml" />
+	<meta name="theme-color" content="#ffffff" />
+	<script nonce="eqS1LmfUjzPTXKoINZ+zlg==">
+		window.publicUrlPath = 'https://static.yoomoney.ru/transfers-client/';
+	</script>
+	<script nonce="eqS1LmfUjzPTXKoINZ+zlg==">
+		(function() {
+			'use strict';
+			var numberOfSentRequests = 0;
+			var MAXIMUM_REQUESTS = 10;
+			window.onerror = function(message, url, line, col, error) {
+				var req = new XMLHttpRequest();
+				var stack = error && error.stack || '';
+				if (req && numberOfSentRequests < MAXIMUM_REQUESTS) {
+					numberOfSentRequests += 1;
+					req.open('POST', '/transfer/platform/client-errors', true);
+					req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+					req.send('url=' + encodeURIComponent(location.href)
+						+ '&message=' + encodeURIComponent(message)
+						+ '&stacktrace=' + encodeURIComponent(stack)
+						+ '&userAgent=' + encodeURIComponent(navigator.userAgent)
+					);
+				}
+			};
+		})();
+	</script>
+</head>
+
+<body class="styled__StyledBody-sc-1uyafiu-0 hLCErC">
+<div>
+	<style id="lsp-server-styles">
+      .lsp-MuiButtonBase-root {
+          color: inherit;
+          border: 0;
+          cursor: pointer;
+          margin: 0;
+          display: inline-flex;
+          outline: 0;
+          padding: 0;
+          position: relative;
+          align-items: center;
+          user-select: none;
+          border-radius: 0;
+          vertical-align: middle;
+          -moz-appearance: none;
+          justify-content: center;
+          text-decoration: none;
+          background-color: transparent;
+          -webkit-appearance: none;
+          -webkit-tap-highlight-color: transparent;
+      }
+
+      .lsp-MuiButtonBase-root::-moz-focus-inner {
+          border-style: none;
+      }
+
+      .lsp-MuiButtonBase-root.Mui-disabled {
+          cursor: default;
+          pointer-events: none;
+      }
+
+      @media print {
+          .lsp-MuiButtonBase-root {
+              color-adjust: exact;
+          }
+      }
+
+      .lsp-MuiButton-root {
+          color: var(--color-control-typo-primary);
+          height: var(--control-size-m-height);
+          padding: var(--button-size-m-indentAll);
+          font-size: var(--control-size-m-font-size);
+          min-width: 64px;
+          box-sizing: border-box;
+          transition: background-color .15s linear;
+          font-family: var(--typography-control-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--control-size-m-line-height);
+          white-space: nowrap;
+          border-radius: var(--button-box-border-radius);
+          text-transform: none;
+      }
+
+      .lsp-MuiButton-root:hover {
+          text-decoration: none;
+          background-color: transparent;
+      }
+
+      .lsp-MuiButton-root.Mui-disabled {
+          color: rgba(0, 0, 0, 0.26);
+      }
+
+      .lsp-MuiButton-root.Mui-focusVisible {
+          transform: scale(.96);
+          transition: none;
+      }
+
+      .lsp-MuiButton-root:active {
+          transform: scale(.96);
+          transition: none;
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-root:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiButton-root:hover.Mui-disabled {
+          background-color: transparent;
+      }
+
+      .lsp-MuiButton-label {
+          width: 100%;
+          display: inherit;
+          align-items: inherit;
+          justify-content: inherit;
+      }
+
+      .lsp-MuiButton-text:hover {
+          background-color: var(--color-control-bg-default-hover);
+      }
+
+      .lsp-MuiButton-textSecondary:hover {
+          background-color: transparent;
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-textSecondary:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiButton-outlined {
+          color: var(--color-control-typo-primary);
+          border: var(--button-box-border-width) solid var(--color-control-bg-border-pseudo);
+          padding: 5px 15px;
+          background-color: var(--color-control-bg-pseudo);
+      }
+
+      .lsp-MuiButton-outlined.Mui-disabled {
+          color: var(--color-control-typo-disable);
+          border: none;
+          background-color: var(--color-control-bg-default-disable);
+      }
+
+      .lsp-MuiButton-outlined:hover {
+          background-color: var(--color-control-bg-pseudo-hover);
+      }
+
+      .lsp-MuiButton-outlinedPrimary:hover {
+          background-color: transparent;
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-outlinedPrimary:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiButton-outlinedSecondary:hover {
+          background-color: transparent;
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-outlinedSecondary:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiButton-contained {
+          color: var(--color-control-typo-primary);
+          box-shadow: none;
+          background-color: var(--color-control-bg-default);
+      }
+
+      .lsp-MuiButton-contained:hover {
+          box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+          background-color: var(--color-control-bg-default-hover);
+      }
+
+      .lsp-MuiButton-contained.Mui-focusVisible {
+          box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      }
+
+      .lsp-MuiButton-contained:active {
+          box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      }
+
+      .lsp-MuiButton-contained.Mui-disabled {
+          color: var(--color-control-typo-disable);
+          box-shadow: none;
+          background-color: var(--color-control-bg-default-disable);
+      }
+
+      .lsp-MuiButton-contained:active,
+      .lsp-MuiButton-contained.Mui-focusVisible {
+          background-color: var(--color-control-bg-default-press);
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-contained:hover {
+              box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+              background-color: var(--color-control-bg-default);
+          }
+      }
+
+      .lsp-MuiButton-contained:hover.Mui-disabled {
+          background-color: var(--color-control-bg-default-disable);
+      }
+
+      .lsp-MuiButton-containedPrimary:hover {
+          background-color: transparent;
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-containedPrimary:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiButton-containedSecondary:hover {
+          background-color: transparent;
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-containedSecondary:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiButton-disableElevation {
+          box-shadow: none;
+      }
+
+      .lsp-MuiButton-disableElevation:hover {
+          box-shadow: none;
+      }
+
+      .lsp-MuiButton-disableElevation.Mui-focusVisible {
+          box-shadow: none;
+      }
+
+      .lsp-MuiButton-disableElevation:active {
+          box-shadow: none;
+      }
+
+      .lsp-MuiButton-disableElevation.Mui-disabled {
+          box-shadow: none;
+      }
+
+      .lsp-MuiButton-colorInherit {
+          color: inherit;
+          border-color: currentColor;
+      }
+
+      .lsp-MuiButton-textSizeSmall {
+          padding: 4px 5px;
+          font-size: 0.8125rem;
+      }
+
+      .lsp-MuiButton-textSizeLarge {
+          padding: 8px 11px;
+          font-size: 0.9375rem;
+      }
+
+      .lsp-MuiButton-outlinedSizeSmall {
+          padding: 3px 9px;
+          font-size: 0.8125rem;
+      }
+
+      .lsp-MuiButton-outlinedSizeLarge {
+          padding: 7px 21px;
+          font-size: 0.9375rem;
+      }
+
+      .lsp-MuiButton-containedSizeSmall {
+          padding: 4px 10px;
+          font-size: 0.8125rem;
+      }
+
+      .lsp-MuiButton-containedSizeLarge {
+          padding: 8px 22px;
+          font-size: 0.9375rem;
+      }
+
+      .lsp-MuiButton-sizeSmall {
+          height: var(--control-size-s-height);
+          padding: var(--button-size-s-indentAll);
+          font-size: var(--control-size-s-font-size);
+          line-height: var(--control-size-s-line-height);
+      }
+
+      .lsp-MuiButton-sizeLarge {
+          height: var(--control-size-l-height);
+          padding: var(--button-size-l-indentAll);
+          font-size: var(--control-size-l-font-size);
+          line-height: var(--control-size-l-line-height);
+      }
+
+      .lsp-MuiButton-fullWidth {
+          width: 100%;
+      }
+
+      .lsp-MuiButton-startIcon {
+          color: unset;
+          display: inherit;
+          margin-left: -4px;
+          margin-right: 8px;
+      }
+
+      .lsp-MuiButton-startIcon.lsp-MuiButton-iconSizeSmall {
+          margin-left: -2px;
+      }
+
+      .lsp-MuiButton-endIcon {
+          color: unset;
+          display: inherit;
+          margin-left: 8px;
+          margin-right: -4px;
+      }
+
+      .lsp-MuiButton-endIcon.lsp-MuiButton-iconSizeSmall {
+          margin-right: -2px;
+      }
+
+      .lsp-MuiButton-iconSizeSmall>*:first-child {
+          font-size: 18px;
+      }
+
+      .lsp-MuiButton-iconSizeMedium>*:first-child {
+          font-size: 20px;
+      }
+
+      .lsp-MuiButton-iconSizeLarge>*:first-child {
+          font-size: 22px;
+      }
+
+      .lsp-MuiButton-progressActive {
+          color: var(--color-control-typo-passive);
+          animation-name: mui-button-progress;
+          background-size: 34px 34px;
+          background-color: var(--color-control-bg-progress);
+          background-image: repeating-linear-gradient(-45deg,
+          var(--color-control-bg-progress),
+          var(--color-control-bg-progress) 4px,
+          var(--color-control-bg-progress-process) 4px,
+          var(--color-control-bg-progress-process) 8px);
+          animation-duration: .5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+      }
+
+      .lsp-MuiButton-progressActive.Mui-disabled {
+          color: var(--color-control-typo-passive);
+      }
+
+      .lsp-MuiButton-containedActive {
+          color: var(--color-control-typo-passive);
+          border: none;
+          background-color: var(--color-control-bg-action);
+      }
+
+      .lsp-MuiButton-containedActive:hover {
+          border: none;
+          background-color: var(--color-control-bg-action-hover);
+      }
+
+      .lsp-MuiButton-containedActive:active,
+      .lsp-MuiButton-containedActive.Mui-focusVisible {
+          border: none;
+          background-color: var(--color-control-bg-action-press);
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-containedActive:hover {
+              background-color: var(--color-control-bg-action);
+          }
+      }
+
+      .lsp-MuiButton-containedError {
+          color: var(--color-control-typo-passive);
+          border: none;
+          background-color: var(--color-control-bg-border-error);
+      }
+
+      .lsp-MuiButton-containedError:hover {
+          border: none;
+          background-color: var(--color-control-bg-border-error-hover);
+      }
+
+      .lsp-MuiButton-containedError:active,
+      .lsp-MuiButton-containedError.Mui-focusVisible {
+          border: none;
+          background-color: var(--color-control-bg-border-error-hover);
+      }
+
+      .lsp-MuiButton-containedError.Mui-disabled {
+          color: var(--color-control-typo-disable);
+          background-color: var(--color-control-bg-default-disable);
+      }
+
+      @media (hover: none) {
+          .lsp-MuiButton-containedError:hover {
+              background-color: var(--color-control-bg-border-error-hover);
+          }
+      }
+
+      .lsp-MuiButton-outlinedLink {
+          color: var(--color-control-typo-link);
+          border: var(--button-box-border-width) solid var(--color-control-bg-border-link-default);
+          background-color: transparent;
+      }
+
+      .lsp-MuiButton-outlinedLink:hover {
+          color: var(--color-control-typo-link);
+          border: var(--button-box-border-width) solid var(--color-control-bg-border-link-default-hover);
+          background-color: var(--color-control-bg-link-default-hover);
+      }
+
+      .lsp-MuiButton-outlinedLink.Mui-disabled {
+          color: var(--color-control-typo-disable);
+          border: none;
+          background-color: var(--color-control-bg-default-disable);
+      }
+
+      .Mui-checked {
+          color: var(--color-control-typo-faint);
+          border: none;
+          background-color: var(--color-control-bg-check);
+      }
+
+      .Mui-checked:hover {
+          border: none;
+          background-color: var(--color-control-bg-check-hover);
+      }
+
+      .Mui-checked:active,
+      .Mui-checked.Mui-focusVisible {
+          border: none;
+          background-color: var(--color-control-bg-check-press);
+      }
+
+      .Mui-checked.Mui-disabled {
+          color: var(--color-control-typo-faint);
+          border: none;
+          background-color: var(--color-control-bg-check-disable);
+      }
+
+      @media (hover: none) {
+          .Mui-checked:hover {
+              background-color: var(--color-control-bg-check);
+          }
+      }
+
+      .lsp-MuiList-root {
+          margin: 0;
+          padding: 0;
+          position: relative;
+          list-style: none;
+      }
+
+      .lsp-MuiList-padding {
+          padding-top: 8px;
+          padding-bottom: 8px;
+      }
+
+      .lsp-MuiList-subheader {
+          padding-top: 0;
+      }
+
+      .lsp-MuiSvgIcon-root {
+          fill: currentColor;
+          width: 1em;
+          height: 1em;
+          display: inline-block;
+          font-size: 1.5rem;
+          transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+          flex-shrink: 0;
+          user-select: none;
+      }
+
+      .lsp-MuiSvgIcon-colorPrimary {
+          color: #ff0000;
+      }
+
+      .lsp-MuiSvgIcon-colorSecondary {
+          color: #ff0000;
+      }
+
+      .lsp-MuiSvgIcon-colorAction {
+          color: rgba(0, 0, 0, 0.54);
+      }
+
+      .lsp-MuiSvgIcon-colorError {
+          color: #f44336;
+      }
+
+      .lsp-MuiSvgIcon-colorDisabled {
+          color: rgba(0, 0, 0, 0.26);
+      }
+
+      .lsp-MuiSvgIcon-fontSizeInherit {
+          font-size: inherit;
+      }
+
+      .lsp-MuiSvgIcon-fontSizeSmall {
+          font-size: 1.25rem;
+      }
+
+      .lsp-MuiSvgIcon-fontSizeLarge {
+          font-size: 2.1875rem;
+      }
+
+      .lsp-MuiTypography-root {
+          margin: 0;
+      }
+
+      .lsp-MuiTypography-body2 {
+          font-size: var(--size-typo-l);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--line-height-typo-l);
+      }
+
+      .lsp-MuiTypography-body1 {
+          font-size: var(--size-typo-m);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--line-height-typo-m);
+      }
+
+      .lsp-MuiTypography-caption {
+          font-size: var(--size-typo-s);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--line-height-typo-s);
+      }
+
+      .lsp-MuiTypography-button {
+          font-size: var(--control-size-m-font-size);
+          font-family: var(--typography-control-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--control-size-m-line-height);
+          text-transform: none;
+      }
+
+      .lsp-MuiTypography-h1 {
+          font-size: var(--size-typo-xxxxl);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-bold);
+          line-height: var(--line-height-typo-xxxxl);
+      }
+
+      .lsp-MuiTypography-h2 {
+          font-size: var(--size-typo-xxxl);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-bold);
+          line-height: var(--line-height-typo-xxxl);
+      }
+
+      .lsp-MuiTypography-h3 {
+          font-size: var(--size-typo-xxl);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-bold);
+          line-height: var(--line-height-typo-xxl);
+      }
+
+      .lsp-MuiTypography-h4 {
+          font-size: var(--size-typo-xl);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-bold);
+          line-height: var(--line-height-typo-xl);
+      }
+
+      .lsp-MuiTypography-h5 {
+          font-size: 1.5rem;
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: 1.334;
+      }
+
+      .lsp-MuiTypography-h6 {
+          font-size: 1.25rem;
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-medium);
+          line-height: 1.6;
+      }
+
+      .lsp-MuiTypography-subtitle1 {
+          font-size: 1rem;
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: 1.75;
+      }
+
+      .lsp-MuiTypography-subtitle2 {
+          font-size: 0.875rem;
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-medium);
+          line-height: 1.57;
+      }
+
+      .lsp-MuiTypography-overline {
+          font-size: 0.75rem;
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: 2.66;
+          text-transform: uppercase;
+      }
+
+      .lsp-MuiTypography-srOnly {
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+      }
+
+      .lsp-MuiTypography-alignLeft {
+          text-align: left;
+      }
+
+      .lsp-MuiTypography-alignCenter {
+          text-align: center;
+      }
+
+      .lsp-MuiTypography-alignRight {
+          text-align: right;
+      }
+
+      .lsp-MuiTypography-alignJustify {
+          text-align: justify;
+      }
+
+      .lsp-MuiTypography-noWrap {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+      }
+
+      .lsp-MuiTypography-gutterBottom {
+          margin-bottom: 0.35em;
+      }
+
+      .lsp-MuiTypography-paragraph {
+          margin-bottom: 16px;
+      }
+
+      .lsp-MuiTypography-colorInherit {
+          color: inherit;
+      }
+
+      .lsp-MuiTypography-colorPrimary {
+          color: #ff0000;
+      }
+
+      .lsp-MuiTypography-colorSecondary {
+          color: #ff0000;
+      }
+
+      .lsp-MuiTypography-colorTextPrimary {
+          color: #ff0000;
+      }
+
+      .lsp-MuiTypography-colorTextSecondary {
+          color: #ff0000;
+      }
+
+      .lsp-MuiTypography-colorError {
+          color: #f44336;
+      }
+
+      .lsp-MuiTypography-displayInline {
+          display: inline;
+      }
+
+      .lsp-MuiTypography-displayBlock {
+          display: block;
+      }
+
+      .lsp-MuiLink-root:hover {
+          opacity: 0.8;
+      }
+
+      .lsp-MuiLink-underlineNone {
+          text-decoration: none;
+      }
+
+      .lsp-MuiLink-underlineHover {
+          text-decoration: none;
+      }
+
+      .lsp-MuiLink-underlineHover:hover {
+          text-decoration: underline;
+      }
+
+      .lsp-MuiLink-underlineAlways {
+          text-decoration: underline;
+      }
+
+      .lsp-MuiLink-button {
+          border: 0;
+          cursor: pointer;
+          margin: 0;
+          outline: 0;
+          padding: 0;
+          position: relative;
+          user-select: none;
+          border-radius: 0;
+          vertical-align: middle;
+          -moz-appearance: none;
+          background-color: transparent;
+          -webkit-appearance: none;
+          -webkit-tap-highlight-color: transparent;
+      }
+
+      .lsp-MuiLink-button::-moz-focus-inner {
+          border-style: none;
+      }
+
+      .lsp-MuiLink-button.Mui-focusVisible {
+          outline: auto;
+      }
+
+      .lsp-MuiTypography-colorPrimary {
+          color: var(--color-typo-primary);
+      }
+
+      .lsp-MuiTypography-colorSecondary {
+          color: var(--color-typo-secondary);
+      }
+
+      .lsp-MuiTypography-colorAlert {
+          color: var(--color-typo-alert);
+      }
+
+      .lsp-MuiTypography-colorBrand {
+          color: var(--color-typo-brand);
+      }
+
+      .lsp-MuiTypography-colorGhost {
+          color: var(--color-typo-ghost);
+      }
+
+      .lsp-MuiTypography-colorLink {
+          color: var(--color-link);
+      }
+
+      .lsp-MuiTypography-colorPromo {
+          color: var(--color-typo-promo);
+      }
+
+      .lsp-MuiTypography-colorSuccess {
+          color: var(--color-typo-success);
+      }
+
+      .lsp-MuiTypography-colorWarning {
+          color: var(--color-typo-warning);
+      }
+
+      .lsp-MuiTypography-paragraph {
+          margin-bottom: var(--space-s);
+      }
+
+      .lsp-MuiTypography-blockquote {
+          font-size: var(--size-typo-m);
+          border-left: 3px solid var(--color-typo-brand);
+          line-height: var(--line-height-typo-m);
+          margin-left: 60px;
+          padding-left: 15px;
+          margin-bottom: 21px;
+      }
+
+      .lsp-MuiTypography-controlSmall {
+          font-size: var(--control-size-s-font-size);
+          font-family: var(--typography-control-font-family);
+          line-height: var(--control-size-s-line-height);
+      }
+
+      .lsp-MuiTypography-controlMedium {
+          font-size: var(--control-size-m-font-size);
+          font-family: var(--typography-control-font-family);
+          line-height: var(--control-size-m-line-height);
+      }
+
+      .lsp-MuiTypography-controlLarge {
+          font-size: var(--control-size-l-font-size);
+          font-family: var(--typography-control-font-family);
+          line-height: var(--control-size-l-line-height);
+      }
+
+      .lsp-MuiTypography-buttonSmall {
+          font-size: var(--control-size-s-font-size);
+          font-family: var(--typography-control-font-family);
+          line-height: var(--control-size-s-line-height);
+      }
+
+      .lsp-MuiTypography-buttonMedium {
+          font-size: var(--control-size-m-font-size);
+          font-family: var(--typography-control-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--control-size-m-line-height);
+          text-transform: none;
+      }
+
+      .lsp-MuiTypography-buttonLarge {
+          font-size: var(--control-size-l-font-size);
+          font-family: var(--typography-control-font-family);
+          line-height: var(--control-size-l-line-height);
+      }
+
+      .lsp-MuiTypography-button {
+          font-size: var(--control-size-m-font-size);
+          font-family: var(--typography-control-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--control-size-m-line-height);
+          text-transform: none;
+      }
+
+      .lsp-MuiTypography-caption {
+          font-size: var(--size-typo-s);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--line-height-typo-s);
+      }
+
+      .lsp-MuiTypography-listTitle {
+          font-size: var(--size-typo-s);
+          line-height: var(--line-height-typo-s);
+          letter-spacing: var(--typography-letter-spacing-s);
+          text-transform: uppercase;
+      }
+
+      .lsp-MuiListItem-root {
+          color: var(--color-typo-primary);
+          width: 100%;
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          text-align: left;
+          align-items: center;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          justify-content: flex-start;
+          text-decoration: none;
+      }
+
+      .lsp-MuiListItem-root.Mui-focusVisible {
+          background-color: var(--color-bg-selection);
+      }
+
+      .lsp-MuiListItem-root.Mui-disabled {
+          opacity: 0.5;
+      }
+
+      .lsp-MuiListItem-rootdisabled {
+          color: var(--color-typo-disable);
+          opacity: 1;
+      }
+
+      .lsp-MuiListItem-root.Mui-selected {
+          color: var(--color-control-typo-faint);
+          background-color: var(--color-control-bg-check);
+      }
+
+      .lsp-MuiListItem-root.Mui-selected:hover {
+          background-color: var(--color-control-bg-check-hover);
+      }
+
+      .lsp-MuiListItem-container {
+          position: relative;
+      }
+
+      .lsp-MuiListItem-dense {
+          padding-top: 4px;
+          padding-bottom: 4px;
+      }
+
+      .lsp-MuiListItem-alignItemsFlexStart {
+          align-items: flex-start;
+      }
+
+      .lsp-MuiListItem-divider {
+          border-bottom: 1px solid var(--color-bg-stripe);
+          background-clip: padding-box;
+      }
+
+      .lsp-MuiListItem-gutters {
+          padding-left: 16px;
+          padding-right: 16px;
+      }
+
+      .lsp-MuiListItem-button {
+          transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+
+      .lsp-MuiListItem-button:hover {
+          text-decoration: none;
+          background-color: var(--color-bg-hover);
+      }
+
+      @media (hover: none) {
+          .lsp-MuiListItem-button:hover {
+              background-color: transparent;
+          }
+      }
+
+      .lsp-MuiListItem-secondaryAction {
+          padding-right: 48px;
+      }
+
+      .lsp-MuiMenuItem-root {
+          width: auto;
+          overflow: hidden;
+          font-size: inherit;
+          box-sizing: border-box;
+          min-height: var(--control-size-m-height);
+          font-family: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+          padding-top: 6px;
+          white-space: nowrap;
+          padding-bottom: 6px;
+      }
+
+      @media (min-width:737px) {
+          .lsp-MuiMenuItem-root {
+              min-height: var(--control-size-m-height);
+          }
+      }
+
+      .lsp-MuiMenuItem-root.lsp-MuiListItem-divider {
+          border-bottom: 1px solid var(--color-control-bg-border-default);
+          margin-bottom: var(--menu-size-m-vertical-space);
+          padding-bottom: var(--menu-size-m-vertical-space);
+      }
+
+      .lsp-MuiMenuItem-root.lsp-MuiListItem-divider.lsp-MuiMenuItem-dense {
+          margin-bottom: var(--menu-size-s-vertical-space);
+          padding-bottom: var(--menu-size-s-vertical-space);
+      }
+
+      .lsp-MuiMenuItem-root.lsp-MuiListItem-divider:last-child {
+          border-bottom: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;
+      }
+
+      .lsp-MuiMenuItem-gutters {
+          padding: 0 var(--control-size-m-indent);
+      }
+
+      .lsp-MuiMenuItem-gutters.lsp-MuiMenuItem-dense {
+          padding: 0 var(--control-size-s-indent);
+      }
+
+      .lsp-MuiMenuItem-dense {
+          font-size: var(--size-typo-s);
+          min-height: var(--control-size-s-height);
+          font-family: var(--typography-font-family);
+          font-weight: var(--typography-font-weight-regular);
+          line-height: var(--line-height-typo-s);
+      }
+
+      .lsp-MuiMenuItem-dense.Mui-disabled {
+          font-size: var(--size-typo-xs);
+          line-height: var(--line-height-typo-xs);
+      }
+	</style>
+	<style data-styled="true" data-styled-version="5.2.1">
+      .lhiEzr {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+      }
+
+      /*!sc*/
+      data-styled.g1[id="Decorator__StyledDecorator-sc-12ji3ka-0"] {
+          content: "lhiEzr,"
+      }
+
+      /*!sc*/
+      .lfQQtB {
+          font-size: var(--size-typo-s);
+          line-height: var(--line-height-typo-s);
+          color: var(--color-typo-primary);
+      }
+
+      /*!sc*/
+      data-styled.g2[id="Text__StyledTextSpan-sc-9bqqn7-0"] {
+          content: "lfQQtB,"
+      }
+
+      /*!sc*/
+      .hdmgjS {
+          --color-bg-brand: #8b3ffd;
+          --color-bg-selection: rgba(0, 0, 0, 0.08);
+          --color-bg-hover: rgba(0, 0, 0, 0.04);
+          --color-bg-border: rgba(0, 0, 0, 0.08);
+          --color-bg-stripe: rgba(0, 0, 0, 0.04);
+          --color-bg-ghost: rgba(0, 0, 0, 0.06);
+          --color-bg-default: #fff;
+          --color-bg-tone: rgba(0, 0, 0, 0.5);
+          --color-bg-soft: rgba(255, 255, 255, 0.97);
+          --color-bg-success: #009957;
+          --color-bg-alert: #ff2d1a;
+          --color-bg-warning: #ff6a00;
+          --color-bg-normal: #3a465f;
+          --color-bg-link: rgba(103, 3, 252, 0.12);
+          --color-typo-brand: #8b3ffd;
+          --color-typo-primary: #000;
+          --color-typo-secondary: rgba(0, 0, 0, 0.55);
+          --color-typo-ghost: rgba(0, 0, 0, 0.35);
+          --color-typo-success: #009957;
+          --color-typo-warning: #ff6a00;
+          --color-typo-alert: #ff2d1a;
+          --color-typo-normal: #3a465f;
+          --color-link: #6703fc;
+          --color-link-external: #6703fc;
+          --color-link-minor: #6703fc;
+          --color-link-hover: rgba(103, 3, 252, 0.8);
+          --color-control-bg-default: rgb(230, 230, 230);
+          --color-control-bg-default-hover: rgb(219, 219, 219);
+          --color-control-bg-default-press: rgb(219, 219, 219);
+          --color-control-bg-default-disable: rgb(242, 242, 242);
+          --color-control-bg-border-default: rgb(179, 179, 179);
+          --color-control-bg-border-default-hover: rgb(217, 217, 217);
+          --color-control-bg-border-default-press: rgb(179, 179, 179);
+          --color-control-bg-border-default-disable: rgb(217, 217, 217);
+          --color-control-bg-border-error: #ff2d1a;
+          --color-control-bg-border-error-hover: rgb(199, 3, 0);
+          --color-control-bg-blank: rgb(255, 255, 255);
+          --color-control-bg-blank-hover: rgb(255, 255, 255);
+          --color-control-bg-blank-disable: rgb(242, 242, 242);
+          --color-control-bg-border-blank: rgb(217, 217, 217);
+          --color-control-bg-border-blank-hover: rgb(217, 217, 217);
+          --color-control-bg-border-blank-disable: rgb(217, 217, 217);
+          --color-control-bg-heavy: rgb(84, 84, 84);
+          --color-control-bg-heavy-hover: rgb(84, 84, 84);
+          --color-control-bg-heavy-press: rgb(84, 84, 84);
+          --color-control-bg-border-heavy: rgb(84, 84, 84);
+          --color-control-bg-border-heavy-hover: rgb(84, 84, 84);
+          --color-control-bg-border-heavy-press: rgb(84, 84, 84);
+          --color-control-bg-pseudo: rgb(255, 255, 255);
+          --color-control-bg-pseudo-hover: rgb(247, 247, 247);
+          --color-control-bg-border-pseudo: rgb(204, 204, 204);
+          --color-control-bg-action: #8b3ffd;
+          --color-control-bg-action-hover: rgb(127, 43, 253);
+          --color-control-bg-action-press: rgb(121, 33, 253);
+          --color-control-bg-passive: #fff;
+          --color-control-bg-progress: #8b3ffd;
+          --color-control-bg-progress-process: rgb(115, 47, 218);
+          --color-control-bg-check: rgb(139, 63, 253);
+          --color-control-bg-check-press: rgb(121, 33, 253);
+          --color-control-bg-check-hover: rgb(127, 43, 253);
+          --color-control-bg-check-disable: rgb(242, 242, 242);
+          --color-control-bg-border-check: rgb(68, 2, 167);
+          --color-control-bg-border-check-press: rgb(84, 84, 84);
+          --color-control-bg-border-check-hover: rgb(84, 84, 84);
+          --color-control-bg-faint: #fff;
+          --color-control-bg-faint-disable: rgb(199, 199, 199);
+          --color-control-bg-focus: rgb(84, 84, 84);
+          --color-control-bg-border-focus: #8b3ffd;
+          --color-control-bg-border-prism: #8b3ffd;
+          --color-control-bg-shade: rgb(102, 102, 102);
+          --color-control-bg-link-default: #6703fc;
+          --color-control-bg-link-default-hover: rgb(249, 245, 255);
+          --color-control-bg-border-link-default: rgb(188, 160, 233);
+          --color-control-bg-border-link-default-hover: rgb(255, 255, 255);
+          --color-control-typo-primary: #000;
+          --color-control-typo-secondary: rgba(0, 0, 0, 0.6);
+          --color-control-typo-ghost: rgba(0, 0, 0, 0.3);
+          --color-control-typo-passive: rgb(255, 255, 255);
+          --color-control-typo-faint: rgb(255, 255, 255);
+          --color-control-typo-disable: rgb(153, 153, 153);
+          --color-control-typo-link: #6703fc;
+          --color-control-typo-error: #ff2d1a;
+          --radius-xs: 2px;
+          --radius-s: 4px;
+          --radius-m: 8px;
+          --radius-l: 12px;
+          --radius-xl: 16px;
+          --radius-xxl: 20px;
+          --gap: var(--space-m);
+          --col-gap-third: calc(var(--gap) * 0.33);
+          --col-gap-half: calc(var(--gap) * 0.5);
+          --col-gap-two-thirds: calc(var(--gap) * 0.66);
+          --col-gap-full: var(--gap);
+          --col-gap-2x: calc(var(--gap) * 2);
+          --col-gap-3x: calc(var(--gap) * 3);
+          --menu-unfold: 300px;
+          --menu-fold: 56px;
+          --shadow-content-default: 0 0 2px 0 rgba(0, 8, 50, 0.04), 0 2px 4px 0 rgba(0, 8, 50, 0.04), 0 3px 12px 1px rgba(0, 8, 50, 0.08);
+          --shadow-content-raise: 0 0 8px -4px rgba(0, 8, 50, 0.04), 0 4px 12px -2px rgba(0, 8, 50, 0.04), 0 12px 24px 0 rgba(0, 8, 50, 0.08);
+          --shadow-cloud-default: 0 4px 20px 1px rgba(0, 8, 50, 0.04), 0 8px 24px 2px rgba(0, 8, 50, 0.08);
+          --shadow-cloud-raise: 0 12px 26px -2px rgba(0, 8, 50, 0.04), 0 16px 40px -4px rgba(0, 8, 50, 0.08);
+          --shadow-modal-default: 0 0 12px 0 rgba(0, 8, 50, 0.16);
+          --size-typo-xs: 11px;
+          --size-typo-s: 13px;
+          --size-typo-m: 15px;
+          --size-typo-l: 18px;
+          --size-typo-xl: 20px;
+          --size-typo-xxl: 24px;
+          --size-typo-xxxl: 32px;
+          --size-typo-xxxxl: 40px;
+          --line-height-typo-xs: 15px;
+          --line-height-typo-s: 18px;
+          --line-height-typo-m: 21px;
+          --line-height-typo-l: 25px;
+          --line-height-typo-xl: 28px;
+          --line-height-typo-xxl: 34px;
+          --line-height-typo-xxxl: 38px;
+          --line-height-typo-xxxxl: 48px;
+          --space-xxxs: 2px;
+          --space-xxs: 4px;
+          --space-xs: 8px;
+          --space-s: 12px;
+          --space-m: 16px;
+          --space-l: 20px;
+          --space-xl: 24px;
+          --space-xxl: 32px;
+          --space-xxxl: 40px;
+          --space-xxxxl: 48px;
+          --space-xxxxxl: 72px;
+          --space-xxxxxxl: 96px;
+          --attach-resetIcon-width: 14px;
+          --attach-resetIcon-height: 14px;
+          --attach-fileFormat-spaceRight: 5px;
+          --attach-resetIcon-spaceLeft: 5px;
+          --attach-size-s-holder-spaceLeft: 6px;
+          --attach-size-m-holder-spaceLeft: 8px;
+          --attach-size-l-holder-spaceLeft: 10px;
+          --badge-font-family: var(--control-font-family);
+          --badge-size-small: 10px;
+          --badge-size-large: 16px;
+          --badge-font-size: 12px;
+          --badge-border-radius: 8px;
+          --badge-border-width: 2px;
+          --button-box-border-width: 1px;
+          --button-box-border-radius: 4px;
+          --button-size-s-indentAll: 0 13px;
+          --button-size-m-indentAll: 0 15px;
+          --button-size-l-indentAll: 0 18px;
+          --typography-control-font-family: inherit;
+          --control-size-s-font-size: 13px;
+          --control-size-m-font-size: 15px;
+          --control-size-l-font-size: 18px;
+          --control-size-s-line-height: 18px;
+          --control-size-m-line-height: 21px;
+          --control-size-l-line-height: 25px;
+          --control-size-s-height: 32px;
+          --control-size-m-height: 36px;
+          --control-size-l-height: 42px;
+          --control-size-s-indent: 11px;
+          --control-size-m-indent: 13px;
+          --control-size-l-indent: 15px;
+          --divider-indent-all: 16px;
+          --formControlLabel-size-s-indent: 5px;
+          --formControlLabel-size-m-indent: 6px;
+          --formControlLabel-size-l-indent: 7px;
+          --menu-size-s-vertical-space: 4px;
+          --menu-size-s-item-icon-spaceRight: 4px;
+          --menu-size-m-vertical-space: 5px;
+          --menu-size-m-item-icon-spaceRight: 6px;
+          --menu-size-l-vertical-space: 6px;
+          --menu-size-l-item-icon-spaceRight: 6px;
+          --messagebox-tail-width: 20px;
+          --messagebox-tail-height: 8px;
+          --messagebox-close-width: 16px;
+          --messagebox-close-height: 16px;
+          --messagebox-content-spaceAll: var(--space-xl);
+          --messagebox-size-s-content-spaceAll: var(--space-l);
+          --messagebox-size-m-content-spaceAll: var(--space-xl);
+          --messagebox-size-l-content-spaceAll: var(--space-xl);
+          --messagebox-size-border-radius: 7px;
+          --messagebox-size-s-content-maxWidth: 260px;
+          --messagebox-size-m-content-minWidth: 200px;
+          --messagebox-size-m-content-maxWidth: 280px;
+          --messagebox-size-l-content-minWidth: 300px;
+          --messagebox-size-l-content-maxWidth: 380px;
+          --messagebox-view-default-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
+          --modal-border-radius: 12px;
+          --popup-border-radius: 4px;
+          --linear-progress-height: 2px;
+          --linear-progress-border-radius: 0;
+          --circular-progress-size-xs: 14px;
+          --circular-progress-size-s: 26px;
+          --circular-progress-size-m: 30px;
+          --circular-progress-size-l: 36px;
+          --radio-button-indent: 3px;
+          --radio-button-border-radius: 4px;
+          --radio-button-size-s-space: 0 13px;
+          --radio-button-size-m-space: 0 15px;
+          --radio-button-size-l-space: 0 18px;
+          --tabs-border-height: 1px;
+          --tabs-border-color: var(--color-bg-border);
+          --tabs-indicator-height: 2px;
+          --tabs-indicator-color: var(--color-bg-brand);
+          --textfield-borderWidth: 2px;
+          --textfield-borderRadius: 4px;
+          --tooltip-color-bg: rgba(0, 0, 0, 0.85);
+          --tooltip-color-typo: rgb(255, 255, 255);
+          --tooltip-border-radius: 0;
+          --tooltip-size-s-line-height: 12px;
+          --tooltip-size-m-line-height: 14px;
+          --tooltip-size-l-line-height: 16px;
+          --tooltip-size-s-content-space-all: 10px;
+          --tooltip-size-m-content-space-all: 11px 10px;
+          --tooltip-size-l-content-space-all: 13px;
+          --tooltip-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
+          --switch-button-space: 2px;
+          --switch-button-opacity-disabled: 1;
+          --switch-size-s-borderRadius: 8px;
+          --switch-size-s-width: 32px;
+          --switch-size-s-height: 16px;
+          --switch-size-s-button-borderRadius: 6px;
+          --switch-size-s-button-width: 12px;
+          --switch-size-s-button-height: 12px;
+          --switch-size-s-button-press-width: 14px;
+          --switch-size-m-borderRadius: 10px;
+          --switch-size-m-width: 40px;
+          --switch-size-m-height: 20px;
+          --switch-size-m-button-borderRadius: 8px;
+          --switch-size-m-button-width: 16px;
+          --switch-size-m-button-height: 16px;
+          --switch-size-m-button-press-width: 18px;
+          --switch-size-l-borderRadius: 14px;
+          --switch-size-l-width: 54px;
+          --switch-size-l-height: 30px;
+          --switch-size-l-button-borderRadius: 12px;
+          --switch-size-l-button-width: 24px;
+          --switch-size-l-button-height: 24px;
+          --switch-size-l-button-press-width: 26px;
+          --switch-size-l-button-space: 3px;
+          --typography-font-family: inherit;
+          --typography-font-weight-light: 300;
+          --typography-font-weight-regular: 400;
+          --typography-font-weight-medium: 500;
+          --typography-font-weight-bold: 700;
+          --typography-letter-spacing-xs: 0.6px;
+          --typography-letter-spacing-s: 1px;
+          --typography-letter-spacing-m: 2px;
+          --skeleton-border-radius: var(--radius-s);
+          --skeleton-color-bg: var(--color-bg-border);
+      }
+
+      /*!sc*/
+      @media screen and (min-width:737px) {
+          .hdmgjS {
+              --gap: var(--space-xxl);
+          }
+      }
+
+      /*!sc*/
+      @media screen and (min-width:1024px) {
+          .hdmgjS {
+              --gap: var(--space-xxxl);
+          }
+      }
+
+      /*!sc*/
+      @media screen and (min-width:1280px) {
+          .hdmgjS {
+              --gap: var(--space-xxxxl);
+          }
+      }
+
+      /*!sc*/
+      .cLPsjk {
+          --size-typo-xs: 11px;
+          --size-typo-s: 13px;
+          --size-typo-m: 15px;
+          --size-typo-l: 18px;
+          --size-typo-xl: 20px;
+          --size-typo-xxl: 24px;
+          --size-typo-xxxl: 32px;
+          --size-typo-xxxxl: 40px;
+          --line-height-typo-xs: 15px;
+          --line-height-typo-s: 18px;
+          --line-height-typo-m: 21px;
+          --line-height-typo-l: 25px;
+          --line-height-typo-xl: 28px;
+          --line-height-typo-xxl: 34px;
+          --line-height-typo-xxxl: 38px;
+          --line-height-typo-xxxxl: 48px;
+      }
+
+      /*!sc*/
+      @media all and (max-width:1024px) {
+          .cLPsjk {
+              --size-typo-xs: 11px;
+              --size-typo-s: 13px;
+              --size-typo-m: 15px;
+              --size-typo-l: 16px;
+              --size-typo-xl: 18px;
+              --size-typo-xxl: 20px;
+              --size-typo-xxxl: 24px;
+              --size-typo-xxxxl: 32px;
+              --line-height-typo-xs: 15px;
+              --line-height-typo-s: 18px;
+              --line-height-typo-m: 21px;
+              --line-height-typo-l: 22px;
+              --line-height-typo-xl: 25px;
+              --line-height-typo-xxl: 28px;
+              --line-height-typo-xxxl: 34px;
+              --line-height-typo-xxxxl: 38px;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g19[id="ThemeLocal__StyledThemeLocal-sc-1y2ad8h-0"] {
+          content: "hdmgjS,cLPsjk,"
+      }
+
+      /*!sc*/
+      .fPtgc {
+          width: 24px;
+          height: 24px;
+          -webkit-transition: fill 0.2s;
+          transition: fill 0.2s;
+          fill: var(--color-bg-default);
+      }
+
+      /*!sc*/
+      data-styled.g27[id="Icon__StyledIcon2-sc-1qmg3zv-0"] {
+          content: "fPtgc,"
+      }
+
+      /*!sc*/
+      .gIekL {
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          width: var(--space-xxxxl);
+          height: var(--space-xxxxl);
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-transition: all 0.1s ease-in-out 0.1s;
+          transition: all 0.1s ease-in-out 0.1s;
+          border-radius: 50%;
+          cursor: pointer;
+          background: var(--color-typo-brand);
+      }
+
+      /*!sc*/
+      .gIekL>.Icon__StyledIcon2-sc-1qmg3zv-0 {
+          fill: var(--color-bg-default);
+      }
+
+      /*!sc*/
+      .gIekL:hover {
+          background: rgba(88, 44, 194, 0.04);
+      }
+
+      /*!sc*/
+      .gIekL:hover>.Icon__StyledIcon2-sc-1qmg3zv-0 {
+          fill: var(--color-typo-brand);
+      }
+
+      /*!sc*/
+      data-styled.g28[id="Icon__StyledIconWrapper-sc-1qmg3zv-1"] {
+          content: "gIekL,"
+      }
+
+      /*!sc*/
+      .fQVZIx {
+          overflow: hidden;
+          -webkit-transition: width 0.1s linear 0.1s, padding 0.1s linear, box-shadow 0.1s linear;
+          transition: width 0.1s linear 0.1s, padding 0.1s linear, box-shadow 0.1s linear;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          padding: 0;
+          height: var(--space-xxxxl);
+          box-shadow: var(--shadow-cloud-default);
+          border-radius: 50%;
+          width: var(--space-xxxxl);
+      }
+
+      /*!sc*/
+      .fQVZIx:hover {
+          box-shadow: var(--shadow-cloud-default);
+          background-color: var(--color-bg-default);
+          padding: var(--space-xxs);
+          border-radius: calc(var(--space-xxl) + var(--space-xxs) / 2);
+          width: calc(var(--space-xxxxl) * 1);
+          overflow: auto;
+          box-shadow: var(--shadow-cloud-raise);
+      }
+
+      /*!sc*/
+      data-styled.g29[id="HelpCenterMenu__StyledHelpCenter-jknjuw-0"] {
+          content: "fQVZIx,"
+      }
+
+      /*!sc*/
+      .dkrjfT {
+          position: fixed;
+          z-index: 86000;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-transition: right 0.1s linear, bottom 0.1s linear, width 0.1s linear;
+          transition: right 0.1s linear, bottom 0.1s linear, width 0.1s linear;
+          border-radius: 50%;
+          bottom: var(--space-xxl);
+          right: var(--space-xxl);
+      }
+
+      /*!sc*/
+      @media (max-width:736px) {
+          .dkrjfT {
+              right: var(--space-l);
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1023px) {
+          .dkrjfT:hover {
+              bottom: calc(var(--space-xxl) - var(--space-xxs));
+              right: calc(var(--space-xxl) - var(--space-xxs));
+          }
+      }
+
+      /*!sc*/
+      @media(max-width:1023px) {}
+
+      /*!sc*/
+      data-styled.g31[id="HelpCenterMenu__StyledHelpCenterWrapper-jknjuw-2"] {
+          content: "dkrjfT,"
+      }
+
+      /*!sc*/
+      body #__threadswidget_chat__container {
+          z-index: 84999 !important;
+          box-shadow: none !important;
+      }
+
+      /*!sc*/
+      data-styled.g59[id="sc-global-egmCel1"] {
+          content: "sc-global-egmCel1,"
+      }
+
+      /*!sc*/
+      .jbrLqN {
+          color: var(--color-typo-primary);
+          font-size: var(--size-typo-s);
+          line-height: var(--line-height-typo-s);
+      }
+
+      /*!sc*/
+      data-styled.g60[id="styled__StyledCopyright-sc-191fnhu-0"] {
+          content: "jbrLqN,"
+      }
+
+      /*!sc*/
+      .bySPRE {
+          width: 16px;
+          height: 12px;
+          display: inline-block;
+          margin-bottom: -2px;
+          line-height: 14px;
+          background-image: url(https://static.yoomoney.ru/layout-service-portal/media/country-flag_s16_ru.49de22d0c8bcdb1e03ba6ae972375bb3.svg);
+      }
+
+      /*!sc*/
+      .focJWW {
+          width: 16px;
+          height: 12px;
+          display: inline-block;
+          margin-bottom: -2px;
+          line-height: 14px;
+          background-image: url(https://static.yoomoney.ru/layout-service-portal/media/country-flag_s16_gb.dbbb328198d10bb2f7e92ef19a81c223.svg);
+      }
+
+      /*!sc*/
+      data-styled.g85[id="LangSwitcherFlag__StyledIcon-sc-5a2qos-0"] {
+          content: "bySPRE,focJWW,"
+      }
+
+      /*!sc*/
+      .eUYjpB {
+          display: block;
+          cursor: pointer;
+          white-space: nowrap;
+          padding: 0 var(--space-m);
+          color: var(--color-control-typo-primary);
+          background-color: var(--color-control-bg-check);
+          color: var(--color-control-typo-faint);
+      }
+
+      /*!sc*/
+      .eUYjpB:hover {
+          background-color: var(--color-bg-brand);
+      }
+
+      /*!sc*/
+      .gmPPjV {
+          display: block;
+          cursor: pointer;
+          white-space: nowrap;
+          padding: 0 var(--space-m);
+          color: var(--color-control-typo-primary);
+      }
+
+      /*!sc*/
+      data-styled.g86[id="LangSwitcherLang__StyledLangWrapper-sc-15k6gji-0"] {
+          content: "eUYjpB,gmPPjV,"
+      }
+
+      /*!sc*/
+      .lnobrE {
+          display: inline-block;
+          line-height: 28px;
+      }
+
+      /*!sc*/
+      data-styled.g87[id="LangSwitcherLang__StyledName-sc-15k6gji-1"] {
+          content: "lnobrE,"
+      }
+
+      /*!sc*/
+      .iBTbPi {
+          display: inline-block;
+          margin-left: var(--space-xxs);
+          color: var(--color-control-typo-primary);
+      }
+
+      /*!sc*/
+      data-styled.g88[id="LangSwitcher__StyledName-sc-66t8h4-0"] {
+          content: "iBTbPi,"
+      }
+
+      /*!sc*/
+      .iieyuS {
+          position: relative;
+          display: inline-block;
+      }
+
+      /*!sc*/
+      .iieyuS:hover .LangSwitcher__StyledName-sc-66t8h4-0 {
+          opacity: 0.8;
+      }
+
+      /*!sc*/
+      data-styled.g89[id="LangSwitcher__StyledLangSwitcher-sc-66t8h4-1"] {
+          content: "iieyuS,"
+      }
+
+      /*!sc*/
+      .iOQWJn {
+          cursor: pointer;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: baseline;
+          -webkit-box-align: baseline;
+          -ms-flex-align: baseline;
+          align-items: baseline;
+      }
+
+      /*!sc*/
+      data-styled.g90[id="LangSwitcher__StyledLangWrapper-sc-66t8h4-2"] {
+          content: "iOQWJn,"
+      }
+
+      /*!sc*/
+      .fUHbKw {
+          visibility: hidden;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          z-index: 10;
+          box-shadow: 0 1.5ex 2ex -1ex rgba(0, 0, 0, 0.3);
+          background-color: var(--color-control-bg-default);
+      }
+
+      /*!sc*/
+      .fUHbKw .lsp-MuiList-root {
+          padding: 0;
+      }
+
+      /*!sc*/
+      data-styled.g91[id="LangSwitcher__StyledDropdown-sc-66t8h4-3"] {
+          content: "fUHbKw,"
+      }
+
+      /*!sc*/
+      .grwpeT .lsp-MuiMenuItem-root {
+          min-height: unset;
+          padding: 0;
+      }
+
+      /*!sc*/
+      data-styled.g92[id="LangSwitcher__StyledMenu-sc-66t8h4-4"] {
+          content: "grwpeT,"
+      }
+
+      /*!sc*/
+      .fjWqiT {
+          font-size: var(--size-typo-s);
+          line-height: var(--line-height-typo-s);
+      }
+
+      /*!sc*/
+      data-styled.g93[id="styled__StyledLangSwitcherWrapper-kvs82x-0"] {
+          content: "fjWqiT,"
+      }
+
+      /*!sc*/
+      .ubmim {
+          color: var(--color-typo-primary);
+          font-size: var(--size-typo-s);
+          line-height: var(--line-height-typo-s);
+          -webkit-transition: color 0.15s ease-out;
+          transition: color 0.15s ease-out;
+          touch-action: manipulation;
+          -webkit-text-decoration: none;
+          text-decoration: none;
+      }
+
+      /*!sc*/
+      .ubmim:hover {
+          color: var(--color-link-hover);
+      }
+
+      /*!sc*/
+      data-styled.g94[id="styled__StyledLink-sc-4c3pqw-0"] {
+          content: "ubmim,"
+      }
+
+      /*!sc*/
+      .wWetg {
+          min-width: 180px;
+          max-width: 300px;
+          white-space: pre-wrap;
+      }
+
+      /*!sc*/
+      @media (min-width:1600px) {
+          .wWetg {
+              width: 400px;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g95[id="styled__StyledPromo-sc-4c3pqw-1"] {
+          content: "wWetg,"
+      }
+
+      /*!sc*/
+      .fVlaMo {
+          padding-right: var(--space-l);
+      }
+
+      /*!sc*/
+      data-styled.g96[id="styled__StyledPromoImage-sc-4c3pqw-2"] {
+          content: "fVlaMo,"
+      }
+
+      /*!sc*/
+      .enqJnj a {
+          font-size: var(--size-typo-m);
+          line-height: var(--line-height-typo-m);
+      }
+
+      /*!sc*/
+      data-styled.g97[id="styled__StyledPromoText-sc-4c3pqw-3"] {
+          content: "enqJnj,"
+      }
+
+      /*!sc*/
+      .blZiSf {
+          border-top: 1px solid var(--color-bg-border);
+          background-color: var(--color-bg-default);
+      }
+
+      /*!sc*/
+      @media (min-width:1440px) {
+          .blZiSf {
+              padding: var(--space-xl) var(--space-xxxxxxl);
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1280px) and (max-width:1440px) {
+          .blZiSf {
+              padding: var(--space-xl) var(--space-xxxxxxl) var(--space-xl) var(--space-xxxxl);
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:737px) and (max-width:1279px) {
+          .blZiSf {
+              padding: var(--space-xxxxl);
+          }
+      }
+
+      /*!sc*/
+      @media (max-width:736px) {
+          .blZiSf {
+              padding: var(--space-xxl) var(--space-xl);
+          }
+      }
+
+      /*!sc*/
+      data-styled.g108[id="styled__StyledFooter-sc-7k9c93-0"] {
+          content: "blZiSf,"
+      }
+
+      /*!sc*/
+      .hPAEyn {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-align-items: flex-start;
+          -webkit-box-align: flex-start;
+          -ms-flex-align: flex-start;
+          align-items: flex-start;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+      }
+
+      /*!sc*/
+      @media (min-width:1920px) {
+          .hPAEyn {
+              width: 1440px;
+              margin: 0 auto;
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1280px) {
+          .hPAEyn {
+              -webkit-align-items: center;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+          }
+      }
+
+      /*!sc*/
+      @media (max-width:1279px) {
+          .hPAEyn {
+              -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+              flex-direction: column;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g109[id="styled__StyledFooterWrap-sc-7k9c93-1"] {
+          content: "hPAEyn,"
+      }
+
+      /*!sc*/
+      .jPhNjg {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          margin-left: var(--space-l);
+      }
+
+      /*!sc*/
+      @media (max-width:1279px) {
+          .jPhNjg {
+              margin-left: 0;
+          }
+      }
+
+      /*!sc*/
+      @media screen and (min-width:737px) and (max-width:1279px) {
+          .jPhNjg {
+              -webkit-box-pack: justify;
+              -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+              justify-content: space-between;
+              -webkit-flex-direction: row-reverse;
+              -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+              margin-top: var(--space-xxxxl);
+          }
+      }
+
+      /*!sc*/
+      @media (max-width:736px) {
+          .jPhNjg {
+              -webkit-flex-direction: column-reverse;
+              -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse;
+              margin-top: var(--space-xxl);
+          }
+      }
+
+      /*!sc*/
+      data-styled.g110[id="styled__StyledContentWrapper-sc-7k9c93-2"] {
+          content: "jPhNjg,"
+      }
+
+      /*!sc*/
+      .jvvfvt {
+          margin: 0 var(--space-l) 0 var(--space-xxl);
+      }
+
+      /*!sc*/
+      @media (max-width:736px) {
+          .jvvfvt {
+              margin: var(--space-m) var(--space-xxxl) 0 0;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g111[id="styled__StyledCopyrightWrapper-sc-7k9c93-3"] {
+          content: "jvvfvt,"
+      }
+
+      /*!sc*/
+      .fJIoSM {
+          position: fixed;
+          right: var(--space-m);
+          bottom: var(--space-m);
+          left: var(--space-m);
+          margin: 0 auto;
+          z-index: 84000;
+      }
+
+      /*!sc*/
+      @media (max-width:1279px) {
+          .fJIoSM {
+              z-index: 90000;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g121[id="styled__StyledFooterFixedWrapper-sc-1cqkt6b-0"] {
+          content: "fJIoSM,"
+      }
+
+      /*!sc*/
+      @media (max-width:736px) {
+          .hPmrgD.hPmrgD {
+              display: none;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g169[id="User2Enter__StyledMuiSvgIcon-sc-1hkyznd-0"] {
+          content: "hPmrgD,"
+      }
+
+      /*!sc*/
+      .dQikwR {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: end;
+          -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          margin-top: var(--space-l);
+          margin-bottom: var(--space-l);
+      }
+
+      /*!sc*/
+      data-styled.g210[id="styled__StyledNotifierAndUserWrapper-b7vtrh-0"] {
+          content: "dQikwR,"
+      }
+
+      /*!sc*/
+      .kGETfc {
+          display: inline-block;
+      }
+
+      /*!sc*/
+      .kGETfc .YooMoneyLogoBrandColor {
+          fill: var(--color-typo-brand);
+      }
+
+      /*!sc*/
+      .kGETfc .YooMoneyLogoPrimaryColor {
+          fill: var(--color-typo-primary);
+      }
+
+      /*!sc*/
+      data-styled.g247[id="styled__StyledLogo-sc-172ybhd-0"] {
+          content: "kGETfc,"
+      }
+
+      /*!sc*/
+      .cNbNQB {
+          position: relative;
+          display: inline-block;
+          width: 129px;
+          height: 27px;
+      }
+
+      /*!sc*/
+      data-styled.g248[id="styled__StyledServiceLogo-sc-14ms6wa-0"] {
+          content: "cNbNQB,"
+      }
+
+      /*!sc*/
+      @font-face {
+          font-family: 'Factor IO';
+          src: url(https://static.yoomoney.ru/files-front/fonts/factor-io-light.woff2) format('woff2'), url(https://static.yoomoney.ru/files-front/fonts/factor-io-light.woff) format('woff');
+          font-weight: 300;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      /*!sc*/
+      @font-face {
+          font-family: 'Factor IO';
+          src: url(https://static.yoomoney.ru/files-front/fonts/factor-io-regular.woff2) format('woff2'), url(https://static.yoomoney.ru/files-front/fonts/factor-io-regular.woff) format('woff');
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      /*!sc*/
+      @font-face {
+          font-family: 'Factor IO';
+          src: url(https://static.yoomoney.ru/files-front/fonts/factor-io-medium.woff2) format('woff2'), url(https://static.yoomoney.ru/files-front/fonts/factor-io-medium.woff) format('woff');
+          font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      /*!sc*/
+      @font-face {
+          font-family: 'Factor IO';
+          src: url(https://static.yoomoney.ru/files-front/fonts/factor-io-bold.woff2) format('woff2'), url(https://static.yoomoney.ru/files-front/fonts/factor-io-bold.woff) format('woff');
+          font-weight: 700;
+          font-style: normal;
+          font-display: swap;
+      }
+
+      /*!sc*/
+      body {
+          margin: 0;
+          font-family: 'Factor IO', Arial, sans-serif !important;
+          -webkit-font-smoothing: antialiased;
+      }
+
+      /*!sc*/
+      #__threadswidget_chat__container {
+          height: 0;
+      }
+
+      /*!sc*/
+      data-styled.g249[id="sc-global-hVrwwo1"] {
+          content: "sc-global-hVrwwo1,"
+      }
+
+      /*!sc*/
+      .lfLTLD {
+          height: auto;
+          background-color: var(--color-bg-default);
+          position: static;
+          z-index: 100;
+      }
+
+      /*!sc*/
+      data-styled.g250[id="HeaderFragment__StyledHeader-sc-10wo8zg-0"] {
+          content: "lfLTLD,"
+      }
+
+      /*!sc*/
+      .igmtJE {
+          -webkit-transition: height 0.22s;
+          transition: height 0.22s;
+      }
+
+      /*!sc*/
+      @media (max-width:736px) {
+          .igmtJE {
+              padding: 0 var(--space-m);
+              min-height: 76px;
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:737px) {
+          .igmtJE {
+              min-height: 84px;
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:737px) and (max-width:1439px) {
+          .igmtJE {
+              padding: 0 var(--space-xxxxl);
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1440px) {
+          .igmtJE {
+              padding: 0 var(--space-xxxxxxl);
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1920px) {
+          .igmtJE {
+              width: 1440px;
+              margin-left: auto;
+              margin-right: auto;
+          }
+      }
+
+      /*!sc*/
+      data-styled.g251[id="HeaderFragment__StyledHeaderWrapper-sc-10wo8zg-1"] {
+          content: "igmtJE,"
+      }
+
+      /*!sc*/
+      .dwNdME {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          margin: auto;
+      }
+
+      /*!sc*/
+      .dwNdME>div:last-child {
+          width: 100%;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+      }
+
+      /*!sc*/
+      @media (max-width:1023px) {
+          .dwNdME>div:last-child {
+              margin-left: calc(-1 * (129px + var(--space-m)));
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1024px) {
+          .dwNdME>div:last-child {
+              margin-left: calc(-1 * (129px + var(--space-l)));
+          }
+      }
+
+      /*!sc*/
+      data-styled.g252[id="HeaderFragment__StyledHeaderBox-sc-10wo8zg-2"] {
+          content: "dwNdME,"
+      }
+
+      /*!sc*/
+      .dTWFjK {
+          position: relative;
+          z-index: 100;
+          padding-top: 22px;
+          height: 27px;
+      }
+
+      /*!sc*/
+      @media (max-width:1023px) {
+          .dTWFjK {
+              margin-right: var(--space-m);
+          }
+      }
+
+      /*!sc*/
+      @media (min-width:1024px) {
+          .dTWFjK {
+              margin-right: var(--space-l);
+          }
+      }
+
+      /*!sc*/
+      data-styled.g253[id="HeaderFragment__StyledServiceLogoWrapper-sc-10wo8zg-3"] {
+          content: "dTWFjK,"
+      }
+
+      /*!sc*/
+	</style>
+</div>
+<div>
+	<div id="header">
+		<div class="ThemeLocal__StyledThemeLocal-sc-1y2ad8h-0 hdmgjS">
+			<div></div>
+			<div class="HeaderFragment__StyledHeader-sc-10wo8zg-0 lfLTLD">
+				<div class="HeaderFragment__StyledHeaderWrapper-sc-10wo8zg-1 igmtJE qa-header-wrapper">
+					<div class="HeaderFragment__StyledHeaderBox-sc-10wo8zg-2 dwNdME header-fragment">
+						<div class="HeaderFragment__StyledServiceLogoWrapper-sc-10wo8zg-3 dTWFjK"><a
+								aria-label="Главная страница" href="/?_openstat=template%3Bimenu%3Blogo"
+								tabindex="-1" class="styled__StyledServiceLogo-sc-14ms6wa-0 cNbNQB qa-service-logo">
+							<div class="styled__StyledLogo-sc-172ybhd-0 kGETfc"><svg width="129" height="27"
+																																			 viewBox="0 0 129 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path class="YooMoneyLogoBrandColor"
+											d="M24.5225 0C17.0035 0 11.0225 6.06646 11.0225 13.5C11.0225 21.019 17.0889 27 24.5225 27C31.956 27 38.0225 20.9335 38.0225 13.5C38.1079 6.06646 31.956 0 24.5225 0ZM24.5225 18.5411C21.7883 18.5411 19.4813 16.2342 19.4813 13.5C19.4813 10.7658 21.7883 8.45886 24.5225 8.45886C27.2566 8.45886 29.5636 10.7658 29.5636 13.5C29.5636 16.2342 27.3421 18.5411 24.5225 18.5411Z">
+								</path>
+								<path class="YooMoneyLogoBrandColor"
+											d="M11.0222 3.93005V23.5819H6.1519L0 3.93005H11.0222Z"></path>
+								<path class="YooMoneyLogoPrimaryColor"
+											d="M124.917 7.43433L121.926 14.7824C121.841 14.8679 121.841 15.0388 121.841 15.1242L121.755 15.2951L121.67 15.1242C121.67 15.0388 121.584 14.8679 121.584 14.7824L118.594 7.43433H114.749L119.79 19.9944L117.654 24.7793H121.499L128.591 7.43433H124.917Z">
+								</path>
+								<path class="YooMoneyLogoPrimaryColor"
+											d="M96.5505 8.11703C95.867 7.60437 95.0125 7.2626 93.9872 7.17716C92.2784 7.00627 90.6549 7.60438 89.5442 8.71513V7.34805H86.041V19.9082H89.5442V13.3291C89.5442 11.8765 89.8005 11.4493 90.0568 11.1075C90.4841 10.424 91.253 10.0822 92.1929 10.0822C93.1328 10.0822 93.9872 10.5094 94.4144 11.193C94.6708 11.7056 94.7562 12.3892 94.7562 12.731C94.7562 13.8417 94.7562 19.9082 94.7562 19.9082H98.2594V12.3037C98.2594 10.3385 97.6613 8.97146 96.5505 8.11703Z">
+								</path>
+								<path class="YooMoneyLogoPrimaryColor"
+											d="M79.3763 7.5197C77.6674 6.9216 75.7877 7.00704 74.0788 7.77603C72.9681 8.28869 71.9428 9.14312 71.3447 10.2539C70.7466 11.1937 70.4902 12.39 70.4902 13.6716C70.4902 14.9532 70.7466 16.1494 71.3447 17.0893C71.9428 18.0292 72.7117 18.8836 73.7371 19.3963C74.7624 19.9089 75.9586 20.2507 77.0693 20.2507C77.6674 20.2507 78.2655 20.1653 78.8637 19.9944C79.3763 19.8235 79.889 19.6526 80.4016 19.3963C81.4269 18.7982 82.2814 18.0292 82.794 17.0893C83.3921 16.1494 83.6485 14.9532 83.6485 13.6716C83.7339 10.852 82.1105 8.45957 79.3763 7.5197ZM80.4016 13.8425C80.3162 14.9532 79.9744 15.8931 79.2909 16.4912C78.7782 16.9184 78.0092 17.1748 77.0693 17.2602C76.1295 17.2602 75.4459 17.0039 74.8478 16.4912C74.1643 15.8931 73.8225 14.9532 73.7371 13.8425C73.6516 12.5608 74.1643 11.5355 75.1042 10.852C75.6168 10.5102 76.3004 10.2539 76.9839 10.2539C77.7529 10.2539 78.351 10.5102 78.9491 10.852C79.9744 11.4501 80.4871 12.5608 80.4016 13.8425Z">
+								</path>
+								<path class="YooMoneyLogoPrimaryColor"
+											d="M66.4743 8.11712C65.7907 7.60446 64.9363 7.26269 63.911 7.17725C63.7401 7.17725 63.4838 7.17725 63.3129 7.17725C61.9458 7.17725 60.7496 7.77535 59.7243 8.97155L59.5534 9.22788H59.2116C58.9553 8.80066 58.6135 8.4589 58.2717 8.20257C57.5882 7.68991 56.7338 7.34813 55.7084 7.26269C54.085 7.0918 52.8034 7.60446 51.6926 8.80066V7.51902H48.1895V20.0791H51.6926V13.5V13.3291C51.6926 11.9621 51.8635 11.6203 52.1198 11.1931C52.5471 10.5095 53.316 10.0823 54.1705 10.1678C55.0249 10.1678 55.7939 10.595 56.2211 11.2785C56.5629 11.7912 56.5629 12.3893 56.5629 12.9874V19.9937H60.066V13.2437C60.066 11.9621 60.2369 11.5348 60.4933 11.1076C60.9205 10.4241 61.6895 10.0823 62.5439 10.0823C63.3983 10.0823 64.0819 10.5095 64.5091 11.1931C64.7654 11.6203 64.8508 12.1329 64.8508 12.4747C64.8508 12.6456 64.8508 12.8165 64.8508 12.9019V19.9083H68.354V12.2184C68.354 11.5348 68.2686 10.8513 68.0977 10.2532C67.7559 9.39876 67.2433 8.62978 66.4743 8.11712Z">
+								</path>
+								<path class="YooMoneyLogoPrimaryColor"
+											d="M111.417 16.1494C110.904 16.662 109.708 17.6019 108.085 17.6873C106.718 17.7728 105.692 17.3456 104.923 16.5766C104.582 16.2348 104.325 15.7221 104.154 15.2095H113.809V15.124C113.895 14.6114 113.98 14.1842 113.98 13.6715C113.98 13.2443 113.895 12.6462 113.724 11.8772C113.297 10.4247 112.442 9.31392 111.332 8.45948C110.05 7.51961 108.854 7.26328 108.512 7.26328C106.034 6.83607 103.214 7.94682 101.762 10.2538C100.737 11.8772 100.822 13.5006 100.822 14.0133C100.822 14.6114 100.907 16.4911 102.445 18.2C104.24 20.1652 106.718 20.2506 107.487 20.3361C110.904 20.4215 113.211 18.2854 113.724 17.8582L111.417 16.1494ZM105.436 10.8519C105.949 10.5101 106.547 10.2538 107.316 10.2538C108.085 10.2538 108.683 10.5101 109.281 10.8519C109.794 11.2791 110.221 11.7918 110.477 12.3899H104.325C104.411 11.7918 104.838 11.1937 105.436 10.8519Z">
+								</path>
+							</svg></div>
+						</a></div>
+						<div>
+							<div class="styled__StyledNotifierAndUserWrapper-b7vtrh-0 dQikwR">
+								<div class="qa-user"><a
+										class="lsp-MuiButtonBase-root lsp-MuiButton-root lsp-MuiButton-contained lsp-MuiButton-containedActive qa-user-enter lsp-MuiButton-disableElevation"
+										tabindex="-1" aria-disabled="false"
+										href="https://yoomoney.ru/yooid/login?origin=Wallet"><span class="lsp-MuiButton-label"><span class="lsp-MuiButton-startIcon lsp-MuiButton-iconSizeMedium"><svg class="lsp-MuiSvgIcon-root SvgIcon-sc-51vwxy-0 User2Enter__StyledMuiSvgIcon-sc-1hkyznd-0 ehHwjr hPmrgD" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v2h11v16H9v2h13V2H9zm-7 8.125h9V7l6 5-6 5v-3.125H2v-3.75z"></path></svg></span><span>Войти</span></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="root"></div>
+<div>
+	<div id="footer">
+		<div class="ThemeLocal__StyledThemeLocal-sc-1y2ad8h-0 hdmgjS">
+			<div class="HelpCenterMenu__StyledHelpCenterWrapper-jknjuw-2 dkrjfT qa-help-center-menu">
+				<div class="HelpCenterMenu__StyledHelpCenter-jknjuw-0 fQVZIx qa-menu">
+					<div class="Icon__StyledIconWrapper-sc-1qmg3zv-1 gIekL qa-faq"><svg width="24" height="24"
+																																							class="Icon__StyledIcon2-sc-1qmg3zv-0 fPtgc">
+						<path
+								d="M9.44847 7.56623C9.59751 7.11909 10.3318 6 11.9998 6c1.0275 0 1.6905.45036 2.1222.9957.4671.59006.6278 1.25005.6278 1.5043 0 .41865-.0529.82866-.2263 1.21886-.1686.37924-.4765.79784-1.0784 1.19904-.1988.1326-.3941.2413-.5953.3491l-.0924.0492c-.1666.0886-.3603.1916-.5274.2975-.2048.1299-.459.3171-.6575.5972-.2156.3043-.3227.6563-.3227 1.0391v3.5h2v-3.4132c.0138-.0096.0306-.0209.051-.0339.097-.0614.2087-.121.3741-.2092l.1195-.0638c.2167-.1162.4797-.261.7601-.4478.8981-.5988 1.4651-1.3052 1.7966-2.051.3266-.73476.3987-1.44975.3987-2.0311 0-.74575-.3393-1.83576-1.0597-2.7457C14.9343 4.79964 13.7223 4 11.9998 4 9.26773 4 7.90205 5.88091 7.5511 6.93377c-.17465.52395.10851 1.09027.63246 1.26491.52394.17465 1.09026-.10851 1.26491-.63245zM12.2498 20.5c.6903 0 1.25-.5596 1.25-1.25s-.5597-1.25-1.25-1.25c-.6904 0-1.25.5596-1.25 1.25s.5596 1.25 1.25 1.25z">
+						</path>
+					</svg></div>
+				</div>
+			</div>
+			<div class="ThemeLocal__StyledThemeLocal-sc-1y2ad8h-0 cLPsjk"></div>
+			<div class="styled__StyledFooterFixedWrapper-sc-1cqkt6b-0 fJIoSM"></div>
+			<footer class="styled__StyledFooter-sc-7k9c93-0 blZiSf qa-footer-light">
+				<div class="styled__StyledFooterWrap-sc-7k9c93-1 hPAEyn">
+					<div class="styled__StyledPromo-sc-4c3pqw-1 wWetg qa-promo-block">
+						<div display="flex" class="Decorator__StyledDecorator-sc-12ji3ka-0 lhiEzr"><a
+								href="https://yookassa.ru/?_openstat=template;ifooter;get;kassa" target="_blank"
+								class="styled__StyledLink-sc-4c3pqw-0 ubmim">
+							<div class="styled__StyledPromoImage-sc-4c3pqw-2 fVlaMo">
+								<img src="/i/YooKassa_logo_60x60.svg" width="60" height="60" alt="YooKassa"/></div>
+						</a>
+							<div class="styled__StyledPromoText-sc-4c3pqw-3 enqJnj"><a
+									href="https://yookassa.ru/?_openstat=template;ifooter;get;kassa" target="_blank"
+									class="styled__StyledLink-sc-4c3pqw-0 ubmim">Онлайн-платежи для бизнеса.
+								ЮKassa</a></div>
+						</div>
+					</div>
+					<div class="styled__StyledContentWrapper-sc-7k9c93-2 jPhNjg">
+						<div class="styled__StyledCopyrightWrapper-sc-7k9c93-3 jvvfvt">
+							<div class="styled__StyledCopyright-sc-191fnhu-0 jbrLqN qa-copyright">
+									<span>© 2021 ООО НКО «<a class="lsp-MuiTypography-root lsp-MuiLink-root lsp-MuiLink-underlineNone lsp-MuiTypography-colorLink " href="https://yoomoney.ru/about"><span class="Text__StyledTextSpan-sc-9bqqn7-0 lfQQtB"><span>ЮМани</span></span></a>».
+									Лицензия Банка России № 3510‑К</span></div>
+						</div>
+						<div aria-label="Переключить язык"
+								 class="styled__StyledLangSwitcherWrapper-kvs82x-0 fjWqiT qa-lang-switcher">
+							<div class="LangSwitcher__StyledLangSwitcher-sc-66t8h4-1 iieyuS">
+								<div
+										class="LangSwitcher__StyledLangWrapper-sc-66t8h4-2 iOQWJn qa-lang-switcher-selected-lang">
+									<div size="16"
+											 class="LangSwitcherFlag__StyledIcon-sc-5a2qos-0 bySPRE qa-lang-switcher-flag"
+											 data-qa-flag-name="ru"></div>
+									<div class="LangSwitcher__StyledName-sc-66t8h4-0 iBTbPi">Ru</div>
+								</div>
+								<div class="LangSwitcher__StyledDropdown-sc-66t8h4-3 fUHbKw">
+									<ul class="lsp-MuiList-root LangSwitcher__StyledMenu-sc-66t8h4-4 grwpeT lsp-MuiList-padding"
+											role="menu" tabindex="-1"><a
+											class="lsp-MuiButtonBase-root lsp-MuiListItem-root lsp-MuiMenuItem-root lsp-MuiListItem-button"
+											tabindex="0" aria-disabled="false" role="menuitem"
+											href="https://yoomoney.ru/yooid/profile/set-lang?language=ru&amp;returnUrl="><span selected="" class="LangSwitcherLang__StyledLangWrapper-sc-15k6gji-0 eUYjpB qa-lang-switcher-lang" data-qa-lang-name="Ru"><div size="16" class="LangSwitcherFlag__StyledIcon-sc-5a2qos-0 bySPRE qa-lang-switcher-flag" data-qa-flag-name="ru"></div><span class="LangSwitcherLang__StyledName-sc-15k6gji-1 lnobrE">Ru</span></span></a><a
+											class="lsp-MuiButtonBase-root lsp-MuiListItem-root lsp-MuiMenuItem-root lsp-MuiListItem-button"
+											tabindex="-1" aria-disabled="false" role="menuitem"
+											href="https://yoomoney.ru/yooid/profile/set-lang?language=en&amp;returnUrl="><span class="LangSwitcherLang__StyledLangWrapper-sc-15k6gji-0 gmPPjV qa-lang-switcher-lang" data-qa-lang-name="En"><div size="16" class="LangSwitcherFlag__StyledIcon-sc-5a2qos-0 focJWW qa-lang-switcher-flag" data-qa-flag-name="gb"></div><span class="LangSwitcherLang__StyledName-sc-15k6gji-1 lnobrE">En</span></span></a>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+</div>
+<script nonce="eqS1LmfUjzPTXKoINZ+zlg==">
+	window.__data__={"title":"ЮMoney","preloadedState":{"counters":{"amplitudeAPIKey":"7a53b6fd93a51a9348fa7837a5fbb028","yametricsTransferId":46740843,"yametrics":{"enabled":true,"id":[46740843,152220]},"fbMetrics":"523526445368073","mailruMetrics":"3231983"},"urls":{"getTransferSources":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer\u002Fajax\u002Ftransfers\u002FgetTransferSources","getTransferContract":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer\u002Fajax\u002Ftransfers\u002FgetTransferContract","getContactList":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer\u002Fajax\u002Fcontacts\u002FgetContactList","getTransferRecipients":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer\u002Fajax\u002Ftransfers\u002FgetTransferRecipients","getTransferRecipientTypes":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer\u002Fajax\u002Ftransfers\u002FgetTransferRecipientTypes","cancelParticipation":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer\u002Fajax\u002Ftransfers\u002FcancelExperimentParticipation","nonLoggedOffer":"https:\u002F\u002Fyoomoney.ru\u002Fpage?id=527708","transferStart":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer","start":"https:\u002F\u002Fyoomoney.ru\u002Ftransfer","storeCard":"https:\u002F\u002Fpaymentcard.yoomoney.ru\u002Fgates\u002Fcard\u002FstoreCard","storeCardForPayment":"https:\u002F\u002Fpaymentcard.yoomoney.ru\u002Fwebservice\u002Fstorecard\u002Fapi\u002FstoreCardForPayment","storeGooglePayCardForPayment":"https:\u002F\u002Fpaymentcard.yoomoney.ru\u002Fwebservice\u002Fstorecard\u002Fapi\u002FstoreGooglePayCardForPayment"},"language":"ru","userType":"nonLogged","tmx":{"sessionId":"6fba25d6-b88b-5e16-b9b3-beb0c3835a96","orgId":"fsymclue","host":"https:\u002F\u002Fs4.partner.yoomoney.ru","nonce":"eqS1LmfUjzPTXKoINZ+zlg=="},"userAgentInfo":{"isBrowser":false,"isMobile":false,"isTablet":false,"BrowserName":"","BrowserVersion":"","SameSiteSupport":false,"SameSiteNoneSupport":true,"isRobot":true},"transferErrorTexts":{"senderPersonificationSingleLimitExceeded":{"text":"Переведите сумму поменьше. Максимум — 15 000 ₽"},"senderPersonificationMonthLimitExceeded":{"text":"Сработал лимит на перевод в кошельки. Попробуйте перевести на банковскую карту"},"senderIdentificationToPersonificationSingleLimitExceeded":{"text":"Переведите сумму поменьше. Максимум — 60 000 ₽ за раз"},"senderIdentificationToIdentificationSingleLimitExceeded":{"text":"Переведите сумму поменьше"},"senderTurnoverLimitExceeded":{"text":"Закончились лимиты на переводы. Попробуйте завтра. Не получится — дождитесь следующего месяца"},"operationForbidden":{"text":"Простите, перевести не получится. Напишите в поддержку — подскажем, в чём дело"},"formsAndButtonsLimitExceeded":{"text":"Переведите сумму поменьше. Максимум — 15 000 ₽"},"recipientDepositLimitExceeded":{"text":"Переведите сумму поменьше: у этого человека есть лимит на получение денег"},"prepaidThroughLimitExceeded":{"text":"Пополните с другой карты: с этой карты сегодня не получится (сработал лимит)"},"prepaidSingleLimitExceeded":{"text":"Переведите сумму поменьше. Максимум — 15 000 ₽"},"withdrawPersonificationSingleLimitExceeded":{"text":"Переведите сумму поменьше. Максимум — 15 000 ₽"},"withdrawDayLimitExceeded":{"text":"Переведите завтра. Сегодня никак: сработал лимит"},"withdrawPersonificationMonthLimitExceeded":{"text":"Сработал лимит. Перевести деньги получится только в следующем месяце."},"withdrawIdentificationSingleLimitExceeded":{"text":"Переведите сумму поменьше. Максимум — 75 000 ₽"},"withdrawIdentificationMonthLimitExceeded":{"text":"Вы достигли лимита за этот месяц. Переведите деньги в следующем месяце"},"notEnoughMoney":{"text":"Пополните счет удобным способом или смените способ оплаты"},"transferToAnonymousForbidden":{"text":"Получатель пока не может принимать переводы с карт: он не подтвердил личность. Отправьте перевод из своего кошелька: тогда у получателя будет 30 дней, чтобы подтвердить личность и забрать деньги."},"internalError":{"text":"Возможно, это был временный сбой — просто попробуйте снова."},"technicalError":{"text":"Возможно, это был временный сбой — просто попробуйте снова."},"recipientLimitExceeded":{"text":"Переведите сумму поменьше: у этого человека есть лимит на получение денег"},"tooBigAmount":{"text":"Слишком большая сумма"},"tooSmallAmount":{"text":"Слишком маленькая сумма"},"sameRecipient":{"text":"Карты отправителя и получателя должны быть разными — а у вас одна и та же: так перевод не отправить"}},"quickPayData":{"referer":"","receiver":"410011983660743","origin":"form","destination":"Тест;\nкоммент","successURL":"","sum":"213","label":"payment-001","targets":"Тест","quickpay-form":"shop","selectedPaymentType":"AC","form-comment":"undefined","comment":"коммент","short-dest":"undefined","quickpay-back-url":""},"googlePayEnvironment":"PRODUCTION","googlePayApiSource":"https:\u002F\u002Fpay.google.com\u002Fgp\u002Fp\u002Fjs\u002Fpay.js","formSenderInfo":{},"transferSwitchers":{"transfers-client-google-recaptcha-enabled":true}}};window.__urls__={"kassa":"https:\u002F\u002Fyookassa.ru","makeupd":"https:\u002F\u002Fyoomoney.ru","default":"https:\u002F\u002Fyoomoney.ru","money":"https:\u002F\u002Fyoomoney.ru","scrat":"https:\u002F\u002Fpaymentcard.yoomoney.ru","passport":"https:\u002F\u002Fpassport.yandex.ru","threeDsGate":"https:\u002F\u002F3ds-gate.yoomoney.ru","paymentApi":"https:\u002F\u002Fpayment.yoomoney.ru\u002Fapi\u002Ftransfers\u002F","soberu":"https:\u002F\u002Fsobe.ru","static":"https:\u002F\u002Fstatic.yoomoney.ru"};window.__layoutData__={"appUrls":{"lk":"https:\u002F\u002Fyookassa.ru","kassa":"https:\u002F\u002Fyookassa.ru","makeupd":"https:\u002F\u002Fyoomoney.ru","avatar":"https:\u002F\u002Fyoomoney.ru","default":"https:\u002F\u002Fyoomoney.ru","static":"https:\u002F\u002Fstatic.yoomoney.ru"},"counters":{"yametrics":[152220,62147710],"amplitudeAPIKey":"7a53b6fd93a51a9348fa7837a5fbb028","gtag":"DC-10075061","fbPixel":"523526445368073","vkPixel":"VK-RTRG-1032781-eXdJD"},"threads":{"connectionSettings":{"history":{"url":"https:\u002F\u002Fccomni-ds.yoomoney.ru\u002Fhistory\u002Fv5","count":20},"uid":"bb2a4811a689953be806fa2026ffe592","apiUrl":"https:\u002F\u002Fccomni-ds.yoomoney.ru","datastore":"https:\u002F\u002Fccomni-ds.yoomoney.ru\u002Ffiles","websocket":"wss:\u002F\u002Fccomni-gate.yoomoney.ru\u002Fsocket"}},"publicUrlPath":"https:\u002F\u002Fstatic.yoomoney.ru\u002Flayout-service-portal\u002F","balance":{},"phoneNumber":"+7 495 197-86-86","language":{"currentLanguage":"ru"},"secretKey":"y410dbb7f05c51d7a3dd72064901a1c67","promo":{"img":"\u002Fi\u002FYooKassa_logo_60x60.svg","text":"Онлайн-платежи для бизнеса. &#10;ЮKassa","href":"https:\u002F\u002Fyookassa.ru\u002F?_openstat=template;ifooter;get;kassa","alt":"YooKassa"},"user":{"uid":null,"accountId":null,"userName":null,"avatarId":null,"avatarSource":null,"accountStatus":"anonymous","isGdprAccepted":false,"hasMobileApp":false,"authHost":"https:\u002F\u002Fyoomoney.ru\u002Fyooid\u002F","maskedEmail":"","maskedPhone":"","isEmailLinked":false},"menu":[{"name":"shops","active":false,"curtain":null,"isBeta":false,"isIndicatorActive":false},{"name":"transfers","active":false,"curtain":null,"isBeta":false,"isIndicatorActive":false},{"name":"gamesAndServices","active":false,"curtain":{"links":[{"href":"\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002F157293","text":"Подарочные карты","visitParams":{"template":{"imenu":{"dgmain":{"dgcards":1}}}},"metric":"HEADMENU_CLICK_GAMESERV_GIFTCARDS"},{"href":"\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002F157297","text":"Игры","metric":"HEADMENU_CLICK_GAMESERV_GAMES"},{"href":"\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002F526303","text":"Программы","metric":"HEADMENU_CLICK_GAMESERV_PROGRAMS"}]},"isBeta":false,"isIndicatorActive":false},{"name":"bankCards","active":false,"curtain":{"links":[[{"href":"\u002Fcards\u002Fyacard","text":"Пластиковая","metric":"HEADMENU_CLICK_CARDS_PLASTIC"},{"href":"\u002Fcards\u002Fvirtual","text":"Виртуальная","metric":"HEADMENU_CLICK_CARDS_VIRT"},{"href":"\u002Faccount\u002Fmulticurrency-promo","text":"Мультивалютная","metric":"HEADMENU_CLICK_CARDS_MULTICURRENCY"}],[{"href":"\u002Fymc\u002Factivate","text":"Активировать новую","iconName":"add-circle","metric":"HEADMENU_CLICK_CARDS_NEW"}]],"urls":{"bankCards":"\u002Fcards","metric":"HEADMENU_CLICK_CARDS_MYCARDS"}},"isBeta":false,"isIndicatorActive":false},{"name":"selfEmployedPromo","active":false,"curtain":null,"isBeta":true,"isIndicatorActive":false},{"name":"discountsAndBonuses","active":false,"curtain":{"links":[{"href":"\u002Floyalty","text":"Кэшбэк баллами","metric":"HEADMENU_CLICK_LOYALTY_BALL"},{"href":"\u002Fspending-points","text":"Где потратить баллы","metric":"HEADMENU_CLICK_SPENDING_POINTS"},{"href":"\u002Fpromo\u002Fcategory\u002Fcashback","text":"Кэшбэк рублями","metric":"HEADMENU_CLICK_LOYALTY_RUB"},{"href":"\u002Fpromo","text":"Скидки и акции","metric":"HEADMENU_CLICK_LOYALTY_DISCOUNTS"}],"offers":{"metric":"HEADMENU_CLICK_LOYALTY_BANNER"}},"isBeta":false,"isIndicatorActive":false},{"name":"investments","active":false,"curtain":{"links":[{"href":"\u002Fyammi","text":"Yammi инвестиции","metric":"HEADMENU_CLICK_INVEST_YAMMI_LINK"},{"href":"https:\u002F\u002Fpromo.yoomoney.ru\u002Fbcs_broker","text":"БКС инвестиции","metric":"HEADMENU_CLICK_INVEST_BKS_LINK"}],"investments":[{"logoKey":"logo-yammi","name":"Yammi","description":"Для новичков &#8212; простые инвестиции с умным робо-помощником","tag":"novice","url":"\u002Fyammi","metric":"HEADMENU_CLICK_INVEST_YAMMI_BANNER"},{"logoKey":"logo-bks","name":"БКС","description":"Для активных &#8212; инвестируйте самостоятельно без лишних трат","tag":"experienced","url":"https:\u002F\u002Fpromo.yoomoney.ru\u002Fbcs_broker","metric":"HEADMENU_CLICK_INVEST_BKS_BANNER"}]},"isBeta":false,"isIndicatorActive":false},{"name":"receiveMoney","active":false,"curtain":{"links":[{"href":"https:\u002F\u002Fdonate.stream\u002F?utm_source=money&utm_campaign=donate&utm_medium=get&utm_term=donate&utm_content=donate","text":"ЮStream","metric":"HEADMENU_CLICK_GETMONEY_YASTREAMER"},{"href":"https:\u002F\u002Fsobe.ru","text":"Страница Соберу","metric":"HEADMENU_CLICK_GETMONEY_YASOBERU"},{"href":"\u002Fquickpay\u002Fform","text":"Формы и кнопки","metric":"HEADMENU_CLICK_GETMONEY_FORMS"},{"href":"\u002Fto","text":"Визитка для переводов","metric":"HEADMENU_CLICK_GETMONEY_TRANSFCARD"},{"href":"\u002Fbill\u002Fhistory","text":"Запрос денег","metric":"HEADMENU_CLICK_GETMONEY_REQUEST"},{"href":"https:\u002F\u002Fyookassa.ru","text":"Касса для бизнеса","metric":"HEADMENU_CLICK_GETMONEY_KASSA"}]},"isBeta":false,"isIndicatorActive":false},{"name":"marketing","text":"ЮVillage","colorText":"#EE0000","url":"\u002Fyoovillage\u002Fpromo?utm_source=money&utm_campaign=yoovillage&utm_medium=banner&utm_content=portal_shapka","active":false,"curtain":null,"isBeta":false,"isIndicatorActive":false}],"experiments":{},"smartBanner":{"smartBannerPaths":["\u002Fstart","\u002Faccount","\u002Faccount\u002Fmulticurrency-promo\u002F","\u002Fannually-confirmation\u002Fsuccess","\u002Fcard\u002Fcard-payment\u002Factivation-data-error.xml","\u002Fcard\u002Fcard-payment\u002Fcancel-check.xml","\u002Fcards","\u002Fcards\u002F","\u002Fcards\u002Fissue\u002Fsuccess","\u002Fglobalmno?","\u002Fkeyterms","\u002Flegal","\u002Floyalty","\u002Fmfo-list","\u002Fpage?id=525698","\u002Fpage?id=527708","\u002Fpage?id=529499","\u002Fpage?id=529934","\u002Fpage?id=532005","\u002Fpage?id=532450","\u002Fpay\u002Fpage?id=522764","\u002Fpay\u002Fpage?id=531940","\u002Fpayments\u002Fcheckout\u002Fsuccess","\u002Fpayments\u002Fexternal\u002Fsuccess","\u002Fpayments\u002Finternal\u002Fsuccess","\u002Fpfm\u002Fanalytics","\u002Fsettings","\u002Fsettings\u002F","\u002Funsupported-browser?","\u002Fyammi\u002F","\u002Fcards\u002Fyacard","\u002Fcards\u002Fvirtual","https:\u002F\u002Fyoomoney.ru\u002Fdigital-goods","https:\u002F\u002Fyoomoney.ru\u002Fdigital-goods\u002Fgames","https:\u002F\u002Fyoomoney.ru\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002F*","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002F157297","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002F157293","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002F526303","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-igri-ot-electronis-arts\u002F528924","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fonlaien-igri\u002F525001","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fportali-i-servisi\u002F525171","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-konsoli\u002F528543","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-igri-activision-blizzard\u002F531836","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002Fdrugie-populyarnie-tovari\u002F529843","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002Fkino-i-cifrovoe-tv\u002F529838","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-action-i-shuteri\u002F525002","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002Fkatalog-programm-drugoe\u002F528110","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002Fmuzika\u002F529839","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002F529240","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002Fkatalog-programm-antivirusi-i-zashita\u002F526304","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002Fknigi-aksessuari-podarki\u002F529841","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-priklyucheniya\u002F525006","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-strategii\u002F525005","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-rolevie-igri\u002F525003","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-simulyatori\u002F525008","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-kazualnie\u002F525000","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002Fkatalog-programm-ofisnie-programmi\u002F526308","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-sportivnie-\u002F525007","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002Fkatalog-programm-graficheskie-redaktori\u002F528087","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-gonki\u002F525004","\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Figri\u002Fjanri-igrovie-artefakti\u002F525265","\u002Ftransfers\u002Fsuccess","\u002Ftransfer\u002Fprocess\u002Fsuccess","\u002Ftopup\u002Fmobile\u002Fsuccess","\u002Fcashback-game","\u002Fcards\u002Finfo\u002F"],"smartBannerEnabled":true},"promoPopup":{"desktop":{"promoPopupPaths":["\u002Factions","\u002Fcatalogue","\u002Fcatalogue\u002F*","\u002Fpromo"],"promoPopupEnabled":true},"mobile":{"promoPopupPaths":["\u002Factions","\u002Fcatalogue","\u002Fcatalogue\u002F*","\u002Fpromo\u002F*"],"promoPopupEnabled":true}},"marketingPixelsAllowedUrls":["\u002F","\u002Fcatalogue","\u002Fcards","\u002Fdigital-goods\u002Fgames","\u002Fid","\u002Fquickpay\u002F*","\u002Fcardlink\u002Fsuccess","\u002Ftransfer\u002Fprocess\u002Fsuccess"],"siteMap":{"default":[{"title":"Оплата услуг","link":"\u002Fcatalogue","content":[{"text":"Мобильная связь","link":"\u002Fcatalogue\u002Fphone"},{"text":"Интернет","link":"\u002Fcatalogue\u002Finternet"},{"text":"ЖКХ","link":"\u002Fcatalogue\u002Fzku"},{"text":"Штрафы ГИБДД","link":"\u002Fdebts"},{"text":"Кредиты","link":"\u002Fcatalogue\u002Ffin"}]},{"title":"Игры и программы","link":"\u002Fdigital-goods","content":[{"text":"Игры","link":"\u002Fdigital-goods\u002Fgames"},{"text":"Программы","link":"\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fprogrammi\u002F526303"},{"text":"Подарочные карты","link":"\u002Fdigital-goods\u002Fcategory\u002Fcifromarket\u002Fpodarochnie-karti\u002F157293"},{"text":"App Store & iTunes","link":"https:\u002F\u002Fpromo.yoomoney.ru\u002Fitunes","target":"_blank"}]},{"title":"Кэшбэк и акции","link":"\u002Floyalty","content":[{"text":"Мгновенный кэшбэк","link":"\u002Floyalty"},{"text":"Скидки от партнёров","link":"\u002Fpromo"},{"text":"Кэшбэк-навигатор для браузера","link":"https:\u002F\u002Fchrome.google.com\u002Fwebstore\u002Fdetail\u002F%D0%BA%D1%8D%D1%88%D0%B1%D1%8D%D0%BA-%D0%BD%D0%B0%D0%B2%D0%B8%D0%B3%D0%B0%D1%82%D0%BE%D1%80\u002Fpdcmppainooaakhpjlbhjjogpleefmdh?utm_source=money&utm_campaign=loyalty_plugin&utm_medium=banner&utm_content=footer1","target":"_blank"}]},{"title":"Карты","link":"\u002Fcards","content":[{"text":"Виртуальная","link":"\u002Fcards\u002Fvirtual"},{"text":"Пластиковая","link":"\u002Fcards\u002Fplastic"},{"text":"Мультивалютная","link":"\u002Faccount\u002Fmulticurrency-promo"}]},{"title":"Переводы","link":"\u002Ftransfer","content":[{"text":"В другой кошелёк","link":"\u002Ftransfer\u002Fa2w"},{"text":"На карту","link":"\u002Ftransfer\u002Fa2c"},{"text":"На банковский счёт","link":"\u002Fwithdraw\u002Fbank-account"},{"text":"Сбор денег","link":"\u002Fget"}]},{"title":"Ещё","content":[{"text":"Безопасность в интернете","link":"\u002Fsecurity?_openstat=template%3Bifooter%3Bhelp%3Bsecurity"},{"text":"Защита покупателя","link":"https:\u002F\u002Fpromo.yoomoney.ru\u002Fprotection?_openstat=template%3Bifooter%3Bsecure"},{"text":"Юридическая информация","link":"\u002Flegal?_openstat=template%3Bifooter%3Bhelp%3Blaw"},{"text":"Пресс-центр","link":"\u002Fpage?id=524406&_openstat=template%3Bifooter%3Bhelp%3Bpress"},{"text":"Карта сайта","link":"\u002Fsite-map"}]}]},"deviceInfo":{"mobileAppBadges":["app-store","google-play"]},"staticParams":{"layoutPortalWithLightFooter":true,"layoutPortalWithoutMenu":true,"layoutPortalWithoutCreateAccount":true}};window.__language__={"id":"ru","name":"ru"};window.__secretKey__="bb04c523421973ae2c519401d21a6bea03e6c435:1640220083933";
+</script>
+<div>
+	<script nonce="eqS1LmfUjzPTXKoINZ+zlg=="
+					src="https://static.yoomoney.ru/layout-service-portal/portal.ru.fca573d038c9f134c35e.js"
+					crossorigin="anonymous"></script>
+</div>
+<script crossorigin="anonymous" src="//yastatic.net/react/16.8.4/react-with-dom.min.js"
+				nonce="eqS1LmfUjzPTXKoINZ+zlg=="></script>
+<script crossorigin="anonymous" src="https://static.yoomoney.ru/transfers-client/quickpay.31720f4abbb224858ad1.js"
+				nonce="eqS1LmfUjzPTXKoINZ+zlg=="></script>
+</body>
+
+</html>
