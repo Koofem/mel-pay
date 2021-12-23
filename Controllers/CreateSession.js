@@ -1,6 +1,4 @@
-// const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-// const {AllowedToken} = require('Constants/index')
 
 
 // access config var

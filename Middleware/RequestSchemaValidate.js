@@ -24,7 +24,7 @@ const Validator = new (class Validator {
 
 const validateMiddleware = (req, res, next, schemas) => {
 	return new Promise((resolve, reject) => {
-		let validateresult = Validator.validate(req.query, schemas);
+		let validateresult = Validator.validate(req.body, schemas);
 		if (validateresult.error) {
 			return reject({ error: validateresult.detail })
 		} else {

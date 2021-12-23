@@ -21,9 +21,9 @@ const Server =  new (class Server {
 		this.app.use(bodyParser.json());
 		router.forEach((rout) => {
 			if (rout.type === requestType.GET) {
-				this.app.get(rout.location,	rout.controller)
+				this.app.get(rout.location, rout.controller)
 			} else if (rout.type === requestType.POST) {
-				this.app.post(rout.location,rout.controller);
+				this.app.post(rout.location, rout.middleware, rout.controller);
 			}
 		})
 
