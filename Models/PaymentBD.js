@@ -2,6 +2,7 @@ const mongodb = require('Models/MongoBD');
 const Joi = require("joi");
 class PaymentBD {
 	paymentBD
+
 	constructor() {
 	}
 
@@ -10,26 +11,34 @@ class PaymentBD {
 		console.log('Модуль оплат подключен')
 	}
 
-	async createPayment({sum,successURL,label,targets,comment, userID, productID}) {
+	async createPayment({sum, successURL, label, targets, comment, userID, productID}) {
 		// не будет работать
 		// label = id пользователя + id мастер класса
 		const payment = await this.findPayment(label)
-		if (payment && !payment.success) {
-			 throw new Error('duplicate data')
+		if (payment && payment.success) {
+			throw new Error('duplicate data')
+		} else if (payment && !payment.success) {
+			return {token: payment._id, sum: payment.sum}
 		}
-		 await this.paymentBD.insertOne({
+
+		await this.paymentBD.insertOne({
 			_id: label,
 			sum: sum,
 			successURL: successURL,
 			receiver: process.env.MONEY_RECEIVER,
-			targets: targets? targets: '',
+			targets: targets ? targets : '',
 			comment: comment,
 			success: false,
-		 	userID: userID,
-		  productID: productID
+			userID: userID,
+			productID: productID,
+			label: label
 		})
 
-		return {token:label, sum: sum}
+		return {token: label, sum: sum}
+	}
+
+	async paymentConfirmation(label) {
+		return await this.updatePayment(label)
 	}
 
 	async findPayment(id) {
@@ -38,8 +47,12 @@ class PaymentBD {
 		})
 	}
 
-	async updatePayment() {
-
+	async updatePayment(id) {
+		await this.paymentBD.findOneAndUpdate({_id: id}, {
+			$set: {
+				success: true,
+			},
+		}, {upsert: true});
 	}
 }
 

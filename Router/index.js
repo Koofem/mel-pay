@@ -1,11 +1,9 @@
-// const Middleware = require("Middleware");
 const {generateAccessToken} = require("Controllers/CreateSession");
 const {buildPaymentPage} = require("Controllers/CreatePaymentLink");
 const { authenticateToken } = require("Middleware/JwtCheck");
 const {openPaymentLink} = require('Controllers/openPaymentLink')
-const { YMNotificationChecker} = require("yoomoney-sdk");
-const notificationChecker = new YMNotificationChecker(process.env.MONEY_SECRET);
-const yoomoneyCheckClass  = require('Controllers/CheckYoomoney');
+const yoomoneyCheckClass  = require('Middleware/CheckYoomoney');
+const paymentUpdate = require('Controllers/PaymentUpdate');
 const Router = [
 	{
 		location: '/',
@@ -36,11 +34,7 @@ const Router = [
 	{
 		location: '/payment/check',
 		middleware: yoomoneyCheckClass.checkYoomoney,
-		controller:  (req,res, next)=> {
-			res.writeHead(200, "OK", { "Content-Type": "text/plain" });
-			res.end("ok");
-		},
-
+		controller:  paymentUpdate.update,
 		type: 'POST',
 	}
 ]

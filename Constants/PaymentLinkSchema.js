@@ -8,6 +8,7 @@ const paymentLinkSchema  = () => {
 		comment: Joi.string().required(),
 		userID: Joi.string().required(),
 		productID: Joi.string().required(),
+		type: Joi.string().required(),
 	})
 }
 
