@@ -10,7 +10,9 @@ class PaymentBD {
 		console.log('Модуль оплат подключен')
 	}
 
-	async createPayment({sum,successURL,label,targets,comment, userID}) {
+	async createPayment({sum,successURL,label,targets,comment, userID, productID}) {
+		// не будет работать
+		// label = id пользователя + id мастер класса
 		const payment = await this.findPayment(label)
 		if (payment && !payment.success) {
 			 throw new Error('duplicate data')
@@ -23,10 +25,11 @@ class PaymentBD {
 			targets: targets? targets: '',
 			comment: comment,
 			success: false,
-		 	userID: userID
+		 	userID: userID,
+		  productID: productID
 		})
 
-		return label
+		return {token:label, sum: sum}
 	}
 
 	async findPayment(id) {
