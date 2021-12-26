@@ -1,5 +1,4 @@
 const mongodb = require('Models/MongoBD');
-const Joi = require("joi");
 class PaymentBD {
 	paymentBD
 
@@ -11,7 +10,11 @@ class PaymentBD {
 		console.log('Модуль оплат подключен')
 	}
 
-	async createPayment({sum, successURL, label, targets, comment, userID, productID}) {
+	async findPayments() {
+		return this.paymentBD.find().toArray();
+	}
+
+	async createPayment({sum, successURL, label, targets, comment, userID, productID, type}) {
 		// не будет работать
 		// label = id пользователя + id мастер класса
 		const payment = await this.findPayment(label)
@@ -31,7 +34,8 @@ class PaymentBD {
 			success: false,
 			userID: userID,
 			productID: productID,
-			label: label
+			label: label,
+			type: type
 		})
 
 		return {token: label, sum: sum}
@@ -48,7 +52,7 @@ class PaymentBD {
 	}
 
 	async updatePayment(id) {
-		await this.paymentBD.findOneAndUpdate({_id: id}, {
+		return await this.paymentBD.findOneAndUpdate({_id: id}, {
 			$set: {
 				success: true,
 			},

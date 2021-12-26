@@ -5,7 +5,6 @@ const readFile = require('Helpers/ReadFile.js')
 
 const yoomoneyPayClass = new (class yoomoneyPayClass {
 	buildPaymentPage({sum, successURL, receiver, label, targets, comment}) {
-		console.log(label)
 		const builder = new YMPaymentFromBuilder({
 			quickPayForm: "shop",
 			// 300 баксов
@@ -38,7 +37,6 @@ const openPaymentLink = async (req, res, next) => {
 	const token = req.query.token
 	try {
 		const payment = await PaymentBD.findPayment(token)
-		console.log(payment)
 		if (payment) {
 			const paymentLink = yoomoneyPayClass.buildPaymentPage(payment)
 			res.send(paymentLink);

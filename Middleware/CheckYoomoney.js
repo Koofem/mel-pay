@@ -8,10 +8,13 @@ const yoomoneyCheckClass = new (class yoomoneyCheckClass {
 		const notificationChecker = new YMNotificationChecker(process.env.MONEY_SECRET);
 		try {
 			const notificationBody = yoomoneyCheckClass.check(req, res, next, notificationChecker);
-				// найти транзакцию, проставить true на sucess и передать транзакцию конкретному пользователю по его id. Записываю транзакцию в пользователя по ссылке
-			req.paymentObject = await PaymentBD.paymentConfirmation(notificationBody.label);
-
-			next();
+			await PaymentBD.paymentConfirmation(notificationBody.label)
+			PaymentBD.findPayment(notificationBody.label).then((paymentObj)=> {
+				req.paymentObject = paymentObj
+				next();
+			}).catch((error)=> {
+				res.status(400).end(error)
+			})
 		} catch (error) {
 			if (error instanceof YMNotificationError) {
 				next()
