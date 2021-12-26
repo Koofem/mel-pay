@@ -6,10 +6,7 @@ const checkPaymentsClass = new (class checkPayments {
 	}
 
 	init() {
-		// cron.schedule('* * 24 * * ', ()=> {
-		// 	console.log('fuck')
-		// })
-		const job = new CronJob('* * 24 * * *', function() {
+		const job = new CronJob('59 23 * * *', function() {
 			return checkPaymentsClass.deletePayments()
 		});
 		job.start();
