@@ -8,7 +8,8 @@ const buildPaymentPage = (req, res, next) => {
 			const data = await PaymentBD.createPayment(req.body)
 			res.status(200).json(data)
 		} catch (e) {
-			res.status(400).json(e).send()
+			res.status(400);
+			res.send(e.message)
 		} finally {
 			res.end()
 		}
