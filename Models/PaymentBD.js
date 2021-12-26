@@ -15,7 +15,6 @@ class PaymentBD {
 	}
 
 	async createPayment({sum, successURL, label, targets, comment, userID, productID, type}) {
-		// не будет работать
 		// label = id пользователя + id мастер класса
 		const payment = await this.findPayment(label)
 		if (payment && payment.success) {

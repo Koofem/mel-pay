@@ -13,7 +13,8 @@ const yoomoneyCheckClass = new (class yoomoneyCheckClass {
 				req.paymentObject = paymentObj
 				next();
 			}).catch((error)=> {
-				res.status(400).end(error)
+				res.status(400)
+				res.send(error)
 			})
 		} catch (error) {
 			if (error instanceof YMNotificationError) {
